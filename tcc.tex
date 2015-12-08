@@ -1,0 +1,328 @@
+\documentclass[a5paper]{ufsc-thesis}
+
+% ---
+% PACOTES
+% ---
+
+% ---
+% Pacotes fundamentais 
+% ---
+%\usepackage{lmodern}			% Usa a fonte Latin Modern			
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{lastpage}			% Usado pela Ficha catalográfica
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+\usepackage{mathtools} %para usar equations
+\usepackage{xfrac} %para usar \sfrac
+\everymath{\displaystyle} %força todas as expressões nem estilo de maior fonte
+%\usepackage{pslatex} % Coloca as letras em Times New Roman, mas não nos Títulos de seções e Capítulos 
+\usepackage{listings}
+\usepackage{listingsutf8}
+
+
+\graphicspath{{figuras/}}
+% ---
+		
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+\usepackage{lipsum}				% para geração de dummy text
+% ---
+
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+
+
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+\titulo{Não definido ainda}
+\autor{Joan Francisco {}Alvarez Burgos}
+\local{Florianópolios, SC-Brasil}
+\data{\today}
+\orientador{Maurício Valencia {}Ferreira da Luz}
+%\coorientador{Equipe \abnTeX}
+%\instituicao{
+%  Universidade Federal de Santa Catarina -- UFSC
+%  \par
+%  Centro Tecnológico -- CTC
+%  \par
+%  Departamento de Engenharia Elétrica -- EEL}
+\instituicao{Universidade Federal de Santa Catarina}
+\centro{Centro Tecnológico -- CTC}
+\programa{Programa de Graduação em Engenharia Elétrica}
+\assuntos{Subestações,Sistemas de Potência,Instalações Elétricas,Orçamentos}
+\tipotrabalho{Trabalho de Conclusão de Curso}
+% O preambulo deve conter o tipo do trabalho, o objetivo, 
+% o nome da instituição e a área de concentração 
+\preambulo{Monografia submetida ao Programa de Graduação em Engenharia Elétrica da Universidade Federal de Santa Catarina como requisito para aprovação na disciplina EEL7890 -- Projeto Final.}
+% ---
+
+
+% ---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+% --- 
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por:
+%\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+%\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+% ----
+% Início do documento
+% ----
+\begin{document}
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+\pretextual
+
+% ---
+% Capa
+% ---
+\imprimircapa
+% ---
+
+% ---
+% Folha de rosto
+% (o * indica que haverá a ficha bibliográfica)
+% ---
+\imprimirfolhaderosto*
+% ---
+
+%\clearpage
+\imprimirfichacatalografica
+
+% ---
+% Inserir folha de aprovação
+% ---
+
+% Isto é um exemplo de Folha de aprovação, elemento obrigatório da NBR
+% 14724/2011 (seção 4.2.1.3). Você pode utilizar este modelo até a aprovação
+% do trabalho. Após isso, substitua todo o conteúdo deste arquivo por uma
+% imagem da página assinada pela banca com o comando abaixo:
+%
+% \includepdf{folhadeaprovacao_final.pdf}
+%
+\begin{folhadeaprovacao}
+
+  \begin{center}
+    {\imprimirautor}
+
+    \vspace*{\fill}\vspace*{\fill}
+    \begin{center}
+      \ABNTEXchapterfont\bfseries\Large\imprimirtitulo
+    \end{center}
+    \vspace*{\fill}
+    
+    %\hspace{.45\textwidth}
+    
+    	\begin{center}
+    		\vspace*{0.5cm}
+    		Esta Monografia foi julgada no contexto da disciplina EL7980 -- Projeto Final, e aprovado em sua forma final pelo Programa de Engenharia Elétrica da Universidade Federal de Santa Catarina.
+    		\vspace*{0.5cm}
+  		\end{center}
+    
+    \vspace*{\fill}
+   \end{center}
+  
+  \begin{center}
+    %\vspace*{0.5cm}
+    {\large\imprimirlocal},
+    {\large\imprimirdata}
+    %\vspace*{1cm}
+  \end{center}
+        
+   \assinatura{\textbf{ Prof. Dr. Eng. Renato Lucas Pacheco} \\ Coordenador de Graduação}
+   Banca Examinadora:
+   \assinatura{\textbf{Prof. Dr. Eng. \imprimirorientador} \\ Orientador} 
+   \assinatura{\textbf{Professor} \\ Convidado 1}
+   \assinatura{\textbf{Professor} \\ Convidado 2}
+   %\assinatura{\textbf{Professor} \\ Convidado 3}
+   %\assinatura{\textbf{Professor} \\ Convidado 4}
+      
+
+\end{folhadeaprovacao}
+% ---
+
+% ---
+% Dedicatória
+% ---
+\begin{dedicatoria}
+   \vspace*{\fill}
+   \centering
+   \noindent
+   \textit{Este trabalho é dedicado à minha família, minha mãe Ana Iris, meu irmão David, meu pai Hans e meus avós Eliana e Arnoldo que foram tão compreensíveis e me deram tanto apoio nos momentos difíceis da jornada da graduação} \vspace*{\fill}
+\end{dedicatoria}
+% ---
+
+% ---
+% Agradecimentos
+% ---
+\begin{agradecimentos}
+Meu agradecimento é dirigido aos meus professores tanto da UDESC quanto da UFSC que tiveram tanta paciência e que se dedicaram para que possa ser um engenheiro que não se deixará ofuscar pelo brilho excessivo da tecnologia, trabalhando para o bem do homem e não da máquina.\par
+Aos meus colegas engenheiros Rosane Nicolodi, Tales Marques de Britto, Otávio Wilbert, Luiz Henrique, Felipe e José Mário além dos técnicos Fábio Paulo, Vando César Raulino, Paulo, Diego, Denize e Elisa, que tornaram o trabalho prazeroso e produtivo, além de enraizar o sentimento de não precisar trabalhar um único momento da vida, pois estarei fazendo aquilo que gosto, engenharia!
+\end{agradecimentos}
+% ---
+
+% ---
+% Epígrafe
+% ---
+\begin{epigrafe}
+    \vspace*{\fill}
+		\noindent
+		\hangindent=5cm \\
+		\textit{`` O maior erro que um homem pode \\
+		cometer é sacrificar a sua saúde a \\
+		qualquer outra vantagem.''}
+		\begin{flushright}
+		Arthur Schopenhauer	
+		\end{flushright}		
+\end{epigrafe}
+% ---
+
+% ---
+% RESUMOS
+% ---
+
+% resumo em português
+%\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+%\begin{resumo}
+%Aqui vai o resumo
+
+% \textbf{Palavras-chaves}: latex. abntex. editoração de texto.
+%\end{resumo}
+
+% resumo em inglês
+%\begin{resumo}[Abstract]
+% \begin{otherlanguage*}{english}
+%   This is the english abstract.
+
+%   \vspace{\onelineskip}
+ 
+%   \noindent 
+%   \textbf{Key-words}: latex. abntex. text editoration.
+% \end{otherlanguage*}
+%\end{resumo}
+
+
+% ---
+% inserir lista de ilustrações
+% ---
+%\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de tabelas
+% ---
+%\pdfbookmark[0]{\listtablename}{lot}
+%\listoftables*
+%\cleardoublepage
+% ---
+
+% ---
+% inserir lista de abreviaturas e siglas
+% ---
+\begin{siglas}
+  \item[Celesc] Centrais Elétricas de Santa Catarina
+\end{siglas}
+% ---
+
+% ---
+% inserir lista de símbolos
+% ---
+\begin{simbolos}
+  \item[$ \Omega $] Letra grega Ômega
+  \item[$ \Delta $] Letra grega Delta
+\end{simbolos}
+
+% ---
+% inserir o sumario
+% ---
+%\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+% ---
+
+
+
+
+% ----------------------------------------------------------
+% Introdução
+% ----------------------------------------------------------
+\chapter*[Introdução]{Introdução} %o asterisco exclui a numeração e retira do sumário
+\addcontentsline{toc}{chapter}{Introdução} %este volta a adicionar ao sumário a introdução
+\lipsum[1-2]
+
+% ---------------------------------------------------
+% Capítulo 1]
+% ---------------------------------------------------
+
+\chapter{Equipamentos de Subestações}
+\label{chap:equipSE}
+\lipsum
+
+% ---------------------------------------------------
+% Conclusão
+% ---------------------------------------------------
+\chapter*[Conclusão]{Conclusão}
+\addcontentsline{toc}{chapter}{Conclusão}
+Conclusão
+
+
+\bibliography{refs}
+\end{document}
+
+
+
+%\begin{figure}[htb]
+%	\caption{Sinal de ECG}
+%	\centering
+%	\includegraphics[width=16cm]{matlab1.pdf}
+%	\legend{Fonte: Do autor}
+%	\label{fig:matlab1}
+%\end{figure}
+
