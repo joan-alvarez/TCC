@@ -1,4 +1,4 @@
-\documentclass[a5paper]{ufsc-thesis}
+\documentclass[a5paper,english,spanish,brazil]{ufsc-thesis}
 
 % ---
 % PACOTES
@@ -14,6 +14,7 @@
 \usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
 \usepackage{color}				% Controle das cores
 \usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{subfig}  %usar duas figurasna mesma figura
 \usepackage{microtype} 			% para melhorias de justificação
 \usepackage{mathtools} %para usar equations
 \usepackage{xfrac} %para usar \sfrac
@@ -22,6 +23,8 @@
 \usepackage{listings}
 \usepackage{listingsutf8}
 
+\usepackage{longtable}
+\usepackage{tabularx}
 
 \graphicspath{{figuras/}}
 % ---
@@ -256,8 +259,8 @@
 % inserir lista de tabelas
 % ---
 %\pdfbookmark[0]{\listtablename}{lot}
-%\listoftables*
-%\cleardoublepage
+\listoftables*
+\cleardoublepage
 % ---
 
 % ---
@@ -295,6 +298,8 @@
 % ----------------------------------------------------------
 % Introdução
 % ----------------------------------------------------------
+%\chapter*[Introdução]{Introdução} %o asterisco exclui a numeração e retira do sumário
+%\addcontentsline{toc}{chapter}{Introdução} %este volta a adicionar ao sumário a introdução
 \chapter{Introdução}
 O estudo de caso consiste na ampliação da Subestação Camboriú de responsabilidade das Centrais Elétricas de Santa Catarina – Celesc que opera em plena carga de 30MVA segundo dados do Centro de Operação do Sistema Elétrico da Celesc desde final de 2013.
 
@@ -307,14 +312,15 @@ Somando que esta tecnologia tem sido implantada em subestações compactas com t
 \section{Objetivos}
 O projeto visa estudar a implantação e execução do projeto já realizado pela Divisão de Planejamento e Normas, enumeração e função de componentes da subestação e principalmente estudar a solução que foi lançada com o objetivo de ampliar de 30MVA para 75MVA até final de 2015 e possibilidade de ampliação futura para até 100MVA utilizando o mesmo pátio de manobra, ou seja, utilizando o mesmo terreno que encontra sem espaço físico para abrigar mais equipamentos que não sejam compactos.
 
+\section{Metodologia}
+\lipsum[1]
+
 % ---------------------------------------------------
 % Capítulo 1
 % ---------------------------------------------------
 
 \chapter{Equipamentos de Subestações}
 \label{chap:equipSE}
-
-\chapter{Fundamentos Teóricos}
 
 \section{Subestação}
 Uma Subestação é uma instalação elétrica de alta potência, contendo equipamentos para transmissão, distribuição, proteção e controle de energia elétrica. Funciona como ponto de controle e transferência em um sistema de transmissão elétrica, direcionando e controlando o fluxo energético, transformando os níveis de tensão e funcionando como pontos de entrega para consumidores industriais. Durante o percurso entre as usinas e as cidades, a eletricidade passa por diversas subestações, onde aparelhos chamados transformadores aumentam ou diminuem a sua tensão. Ao elevar a tensão elétrica no início da transmissão, os transformadores evitam a perda excessiva de energia ao longo do caminho. Já ao rebaixarem a tensão elétrica perto dos centros urbanos, permitem a distribuição da energia por toda a cidade. Apesar de mais baixa, a tensão utilizada nas redes de distribuição ainda não está adequada para o consumo residencial imediato. A instalação de transformadores menores, instalados nos postes das ruas para reduzir ainda mais a tensão que vai diretamente para as residências, comércios e outros locais de consumo. É importante lembrar que o fornecimento de energia elétrica no Brasil é feito por meio de um grande e complexo sistema de subestações e linhas de transmissão, interligadas às várias usinas de diversas empresas. Assim, uma cidade não recebe energia de uma única usina, e sim com a energia gerada por diversas usinas hidrelétricas, termelétricas e até nucleares, dependendo da região.
@@ -330,7 +336,7 @@ O para-raio é o equipamento responsável por funções de grande importância n
   \label{fig:pararaio}
   }
   \subfloat[Placa de identificação] {
-  \includegraphics[width=11cm]{pararaio.jpg}
+  \includegraphics[width=6cm]{pararaio.jpg}
   }
 % \legend{Fonte: Do autor}
 \end{figure}
@@ -363,11 +369,11 @@ Para a interrupção de altas correntes, especialmente na presença de circuitos
   \caption{Disjuntor Siemens a SF6 modelo 3AP1 FG junto a sua placa de identificação}
   \centering
   \subfloat[Disjuntor de Potência] {
-  \includegraphics[width=9.3cm]{disjuntor.pdf}
+  \includegraphics[width=5.5cm]{disjuntor.pdf}
   \label{fig:disjuntor}
   }
   \subfloat[Placa de identificação] {
-  \includegraphics[width=6cm]{placadisjuntor.jpg}
+  \includegraphics[width=5cm]{placadisjuntor.jpg}
   }
 % \legend{Fonte: Do autor}
 \end{figure}\par
@@ -393,7 +399,7 @@ São os relés pioneiros da proteção, projetados e construídos com predominâ
 \begin{figure}[htb]
   \caption{Especificação de um relé eletromecânico da marca Finder}
   \centering
-  \includegraphics[width=16cm]{eletromag.jpg}
+  \includegraphics[width=10.8cm]{eletromag.jpg}
 % \legend{Fonte: Do autor}
   \label{fig:eletromag}
 \end{figure}
@@ -410,15 +416,15 @@ São relés eletrônicos gerenciados por microprocessadores específicos a este 
 \begin{figure}[htb]
   \caption{Relé SEL-351A para linhas}
   \centering
-  \includegraphics[width=16cm]{sel.pdf}
+  \includegraphics[width=10.8cm]{sel.pdf}
   \legend{Fonte: Do autor}
   \label{fig:rele}
 \end{figure}
 
-\begin{longtable}{|l|l|}
+\begin{longtable}{|l|p{0.8\textwidth}|}
 \caption{Tabela ANSI}
-\hline
-  Nr & Denominação \\ \hline
+ \\ \hline
+  Nº & Denominação \\ \hline
   1 & Elemento Principal \\ \hline
   2 & Relé de partida ou fechamento temporizado \\ \hline
   3 & Relé de verificação ou interbloqueio \\ \hline
@@ -595,7 +601,7 @@ O comprimento máximo de cabos de sinal é de 600 m (sem blindagem) ou de 1000 m
 \begin{figure}[htb]
   \caption{Anunciadores de alarmes SEL-2523}
   \centering
-  \includegraphics[width=16cm]{anunciador.jpg}
+  \includegraphics[width=10.8cm]{anunciador.jpg}
 % \legend{Fonte: Do autor}
   \label{fig:anunciador}
 \end{figure}
@@ -606,7 +612,7 @@ Os quadros de baixa tensão compõem-se de um ou mais painéis modulares configu
 \begin{figure}[htb]
   \caption{Vistas dos painéis da casa de comando}
   \centering
-  \includegraphics[width=16cm]{paineis.pdf}
+  \includegraphics[width=10.8cm]{paineis.pdf}
 % \legend{Fonte: Do autor}
   \label{fig:paineis}
 \end{figure}
@@ -622,7 +628,7 @@ Um transformador de corrente ou simplesmente TC é um dispositivo que reproduz n
   \includegraphics[width=5cm]{tca.jpg}
   }
   \subfloat {
-  \includegraphics[width=8cm]{tcb.jpg}
+  \includegraphics[width=5.8cm]{tcb.jpg}
   }
 % \legend{Fonte: Do autor}
 \end{figure}\par
@@ -630,7 +636,7 @@ O ponto, para transformadores com polaridade aditiva, indica onde entra a corren
 \begin{figure}[htb]
   \caption{Placa de identificação de um TC utilizado no barramento de 138 kV}
   \centering
-  \includegraphics[width=13cm]{placatc.jpg}
+  \includegraphics[width=10.8cm]{placatc.jpg}
 % \legend{Fonte: Do autor}
   \label{fig:placatc}
 \end{figure}
@@ -657,7 +663,7 @@ Transformador de Potencial (TP) é um equipamento usado principalmente para sist
 
 \begin{longtable}{|l|l|l|l|}
 \caption{Identificação das partes de um TP}
-\hline
+\\ \hline
   Pos. & Componente & Material & Acabamento \\ \hline
   1 & Terminal de Linha & Liga de Alumínio & Natural \\ \hline
   2 & Placa Superior & Liga de Alumínio & A+B \\ \hline
@@ -676,7 +682,7 @@ Um sistema de corrente alternada opera, em cada uma de suas partes, com a tensã
 \begin{figure}[htb]
   \caption{Princípio básico de um transformador}
   \centering
-  \includegraphics[width=12cm]{transformador.jpg}
+  \includegraphics[width=10.8cm]{transformador.jpg}
 % \legend{Fonte: Do autor}
   \label{fig:transformador}
 \end{figure}
@@ -686,7 +692,7 @@ Os transformadores elevadores de usinas são de dois enrolamentos, o primário e
 \begin{figure}[htb]
   \caption{Tipos de enrolamentos de transformadores de potência}
   \centering
-  \includegraphics[width=12cm]{tiposdetrafo.jpg}
+  \includegraphics[width=10.8cm]{tiposdetrafo.jpg}
 % \legend{Fonte: Do autor}
   \label{fig:tiposdetrafo}
 \end{figure}
@@ -694,7 +700,7 @@ Os transformadores elevadores de usinas são de dois enrolamentos, o primário e
 \begin{figure}[htb]
   \caption{Tipos de ligação dos enrolamentos de um transformador de potência}
   \centering
-  \includegraphics[width=12cm]{tiposdenrol.jpg}
+  \includegraphics[width=10.8cm]{tiposdenrol.jpg}
 % \legend{Fonte: Do autor}
   \label{fig:tiposdenrol}
 \end{figure}
@@ -702,7 +708,7 @@ Os transformadores elevadores de usinas são de dois enrolamentos, o primário e
 \begin{figure}[htb]
   \caption{Placa de identificação de um transformador de potência}
   \centering
-  \includegraphics[width=12cm]{placatrafo.pdf}
+  \includegraphics[width=10.8cm]{placatrafo.pdf}
 % \legend{Fonte: Do autor}
   \label{fig:placatrafo}
 \end{figure}
