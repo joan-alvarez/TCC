@@ -72,7 +72,7 @@
 % Configurações de aparência do PDF final
 
 % alterando o aspecto da cor azul
-\definecolor{blue}{RGB}{41,5,195}
+\definecolor{blue}{RGB}{6,69,173} %padrão wikipedia de cor de link
 
 % informações do PDF
 \makeatletter
@@ -215,7 +215,7 @@
     \vspace*{\fill}
 		\noindent
 		\hangindent=5cm \\
-  \textit{`` O homem disse que tinha de ir embora -- antes queria me ensinar uma coisa muito importante: -- Você quer conhecer o segredo de ser um menino feliz para o resto da sua vida? \\ -- Quero -- Respondi. \\ O segredo se resume em três palavras, que ele pronunciou com intensidade, mãos nos meus ombros e olhos nos meu olhos: \\ -- Pense nos outros.''}
+  \textit{`` O homem disse que tinha de ir embora -- antes queria me ensinar uma coisa muito importante: -- Você quer conhecer o segredo de ser um menino feliz para o resto da sua vida? \\ -- Quero -- Respondi. \\ O segredo se resume em três palavras, que ele pronunciou com intensidade, mãos nos meus ombros e olhos nos meus olhos: \\ -- Pense nos outros.''}
     \begin{flushright}
 		Fernando Sabino	
 		\end{flushright}		
@@ -285,7 +285,7 @@
 % ---
 % inserir o sumario
 % ---
-%\pdfbookmark[0]{\contentsname}{toc}
+\pdfbookmark[0]{\contentsname}{toc}
 \tableofcontents*
 \cleardoublepage
 % ---
@@ -321,12 +321,11 @@ O projeto visa estudar a implantação e execução do projeto já realizado pel
 
 \chapter{Equipamentos de Subestações}
 \label{chap:equipSE}
+Inicialmente para melhor elucidar o trabalho proposto faz-se necessário uma descrição inicial do que é uma subestação e a enumeração dos seus principais equipamentos que a compõe. Somente no \autoref{chap:projSEAT} se fará uma descrição da maneira como esses equipamentos podem ser arranjados para melhor confiabilidade do sistema.
+\section*{Subestação}
+Uma Subestação é um conjunto de condutores, aparelhos e equipamentos destinados a modificar as características da energia elétrica de tensão e corrente, permitindo a sua distribuição aos pontos de consumo em níveis adequados de utilização.\cite{instElet}
 
-\section{Subestação}
-Uma Subestação é uma instalação elétrica de alta potência, contendo equipamentos para transmissão, distribuição, proteção e controle de energia elétrica. Funciona como ponto de controle e transferência em um sistema de transmissão elétrica, direcionando e controlando o fluxo energético, transformando os níveis de tensão e funcionando como pontos de entrega para consumidores industriais. Durante o percurso entre as usinas e as cidades, a eletricidade passa por diversas subestações, onde aparelhos chamados transformadores aumentam ou diminuem a sua tensão. Ao elevar a tensão elétrica no início da transmissão, os transformadores evitam a perda excessiva de energia ao longo do caminho. Já ao rebaixarem a tensão elétrica perto dos centros urbanos, permitem a distribuição da energia por toda a cidade. Apesar de mais baixa, a tensão utilizada nas redes de distribuição ainda não está adequada para o consumo residencial imediato. A instalação de transformadores menores, instalados nos postes das ruas para reduzir ainda mais a tensão que vai diretamente para as residências, comércios e outros locais de consumo. É importante lembrar que o fornecimento de energia elétrica no Brasil é feito por meio de um grande e complexo sistema de subestações e linhas de transmissão, interligadas às várias usinas de diversas empresas. Assim, uma cidade não recebe energia de uma única usina, e sim com a energia gerada por diversas usinas hidrelétricas, termelétricas e até nucleares, dependendo da região.
-
-\section{Equipamentos de uma subestação}
-\subsection{Para-Raios}
+\section{Para-Raios}
 O para-raio é o equipamento responsável por funções de grande importância nos sistemas elétricos, contribuindo, decisivamente, para a sua confiabilidade, economia e continuidade de serviço porque, estando conectados próximos aos principais equipamentos da subestação, impede que as sobre-tensões alcancem valores superiores aqueles para os quais os equipamentos foram projetados. A sua atuação tem por base a absorção de uma parte de corrente associada a onda de tensão que se propaga em direção aos equipamentos que protege, fazendo com que a tensão no seu terminal não ultrapasse determinado valor permitido. São utilizados para controle de subestações de qualquer natureza e a tensão no seu terminal depende da magnitude e da forma de onda do surto do sistema no qual o para-raio está conectado.
 \begin{figure}[htb]
   \caption{Para-raios e sua placa de identificação}
@@ -341,7 +340,7 @@ O para-raio é o equipamento responsável por funções de grande importância n
 % \legend{Fonte: Do autor}
 \end{figure}
 
-\subsection{Chave seccionadora}
+\section{Chave seccionadora}
 As chaves podem desempenhar nas subestações diversas funções, sendo a mais comum a de secionamento de circuitos por necessidade operativa, ou por necessidade de isolar componentes do sistema (equipamentos e linhas) para a realização de manutenção nos mesmos. Neste último caso, a chave aberta que isola o componente em manutenção deve ter uma suportabilidade entre terminais às solicitações dielétricas de forma que o pessoal de campo possa executar o serviço de manutenção em condições adequadas de segurança. A manutenção em uma única chave normalmente acarreta desligamentos indesejáveis nas subestações, chegando, em alguns casos, a provocar o desligamento de toda a subestação. Este caso que ocorre, por exemplo, durante a manutenção dos secionadores ligados à barra principal de subestações com arranjo barra principal/barra transferência.
 
 \begin{figure}[htb]
@@ -352,7 +351,7 @@ As chaves podem desempenhar nas subestações diversas funções, sendo a mais c
   \label{fig:chavesec}
 \end{figure}
 
-\subsection{Disjuntor}
+\section{Disjuntor}
 Disjuntor é um dispositivo eletromecânico que permite proteger uma determinada instalação elétrica contra sobre-intensidades (curto-circuito ou sobrecarga). Sua principal característica é a capacidade de poder ser rearmado manualmente quando estes tipos de defeitos ocorrem, diferindo do fusível, que tem a mesma função, mas que fica inutilizado depois de proteger a instalação. Assim, o disjuntor interrompe a corrente em uma instalação elétrica antes que os efeitos térmicos e mecânicos desta corrente possam se tornar perigosos às próprias instalações. Por esse motivo, ele serve tanto como dispositivo de manobra como de proteção de circuitos elétricos. Atualmente é muito utilizado em instalações elétricas residenciais e comerciais o disjuntor magneto-térmico ou termomagnético, como é chamado no Brasil.\par
 Esse tipo de disjuntor possui três funções:
 \begin{itemize}
@@ -362,7 +361,7 @@ Esse tipo de disjuntor possui três funções:
 \end{itemize}\par
 As características de disparo do disjuntor são fornecidas pelos fabricantes através de duas informações principais: corrente nominal e curva de disparo. Outras características são importantes para o dimensionamento, tais como: tensão nominal, corrente máxima de interrupção do disjuntor e número de polos (unipolar, bipolar ou tri-polar).\par
 
-\subsubsection{Disjuntor de alta tensão}
+\subsection{Disjuntor de alta tensão}
 Para a interrupção de altas correntes, especialmente na presença de circuitos indutivos, são necessários mecanismos especiais para a interrupção do arco voltaico (ou arco elétrico), resultante na abertura dos polos. Para aplicações de grande potência, esta corrente de curto-circuito, pode alcançar valores de 100kA. Após a interrupção, o disjuntor deve isolar e resistir às tensões do sistema. Por fim, o disjuntor deve atuar quando comandado, ou seja, deve haver um alto grau de confiabilidade.\par
 
 \begin{figure}[htb]
