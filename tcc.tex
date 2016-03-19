@@ -26,6 +26,7 @@
 \usepackage{longtable}
 \usepackage{tabularx}
 
+
 \graphicspath{{figuras/}}
 % ---
 		
@@ -196,7 +197,7 @@
    \vspace*{\fill}
    \centering
    \noindent
-   \textit{Este trabalho é dedicado à minha família, minha mãe Ana Iris, meu irmão David, meu pai Hans e meus avós Eliana e Arnoldo que foram tão compreensíveis e me deram tanto apoio nos momentos difíceis da jornada da graduação} \vspace*{\fill}
+   \textit{Este trabalho é dedicado à minha família que foram tão compreensíveis e me deram tanto apoio nos momentos difíceis da jornada da graduação} \vspace*{\fill}
 \end{dedicatoria}
 % ---
 
@@ -326,16 +327,20 @@ Inicialmente para melhor elucidar o trabalho proposto faz-se necessário uma des
 Uma Subestação é um conjunto de condutores, aparelhos e equipamentos destinados a modificar as características da energia elétrica de tensão e corrente, permitindo a sua distribuição aos pontos de consumo em níveis adequados de utilização.\cite{instElet}
 
 \section{Para-Raios}
-O para-raio é o equipamento responsável por funções de grande importância nos sistemas elétricos, contribuindo, decisivamente, para a sua confiabilidade, economia e continuidade de serviço porque, estando conectados próximos aos principais equipamentos da subestação, impede que as sobre-tensões alcancem valores superiores aqueles para os quais os equipamentos foram projetados. A sua atuação tem por base a absorção de uma parte de corrente associada a onda de tensão que se propaga em direção aos equipamentos que protege, fazendo com que a tensão no seu terminal não ultrapasse determinado valor permitido. São utilizados para controle de subestações de qualquer natureza e a tensão no seu terminal depende da magnitude e da forma de onda do surto do sistema no qual o para-raio está conectado.
+O para-raios (mostrado na \autoref{fig:pararaioA}) é um equipamento de proteção principalmente constituído por uma série de varistores\footnote{Um componente elétrico que varia sua resistência conforme a tensão aplicada\cite[p. 413]{BellSytemHistory}} de alta potência colocados em série, projetado para reduzir o nível dos surtos de sobretensão a valores compatíveis com a suportabilidade desses sistemas provenientes principalmente de descargas atmosféricas.\par
+Os para-raios utilizam a propriedade de não linearidade dos elementos que são fabricados para conduzir a corrente de descarga associados às tensões induzidas nas redes, em seguida interromper as correntes subsequentes e conduzi-las à terra.\par
+Estes são construídos por meio da escolha de dos materiais: o carbonato de silício (SiC) ou óxido de zinco (ZnO). 
+
 \begin{figure}[htb]
   \caption{Para-raios e sua placa de identificação}
   \centering
   \subfloat[Para-raio de Potência] {
-  \includegraphics[width=3.5cm,trim = 50mm 0mm 50mm 0mm]{pararaio.pdf}
-  \label{fig:pararaio}
+  \includegraphics[width=3cm,trim = 50mm 0mm 50mm 0mm]{pararaio.pdf}
+  \label{fig:pararaioA}
   }
   \subfloat[Placa de identificação] {
   \includegraphics[width=6cm]{pararaio.jpg}
+   \label{fig:pararaioB}
   }
 % \legend{Fonte: Do autor}
 \end{figure}
