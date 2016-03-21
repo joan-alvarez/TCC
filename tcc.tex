@@ -26,6 +26,9 @@
 \usepackage{longtable}
 \usepackage{tabularx}
 
+\usepackage{varioref}
+\usepackage{hyperref}
+\usepackage{cleveref}
 
 \graphicspath{{figuras/}}
 % ---
@@ -335,15 +338,76 @@ Estes são construídos por meio da escolha de dos materiais: o carbonato de sil
   \caption{Para-raios e sua placa de identificação}
   \centering
   \subfloat[Para-raio de Potência] {
-  \includegraphics[width=3cm,trim = 50mm 0mm 50mm 0mm]{pararaio.pdf}
+  \includegraphics[width=2.7cm]{pararaio.pdf}
   \label{fig:pararaioA}
   }
   \subfloat[Placa de identificação] {
-  \includegraphics[width=6cm]{pararaio.jpg}
-   \label{fig:pararaioB}
+  \includegraphics[width=8cm]{pararaio.jpg}
+  \label{fig:pararaioB}
   }
 % \legend{Fonte: Do autor}
 \end{figure}
+
+\section{Muflas e Terminações}
+
+\section{Condutores}
+
+\section{Transformador de Corrente (TC)}
+Um transformador de corrente ou simplesmente TC é um dispositivo que reproduz no seu circuito secundário, a corrente que circula em um enrolamento primário com sua posição vetorial substancialmente mantida, em uma proporção definida, conhecida e adequada. Os transformadores de corrente, também chamados de transformadores de instrumentos, utilizados em aplicações de alta tensão (situações essas onde circulam, frequentemente, altas correntes), fornecem correntes suficientemente reduzidas e isoladas do circuito primário de forma a possibilitar o seu uso por equipamentos de medição, controle e proteção. A simbologia padrão dos transformadores de corrente mostra os terminais primários de alta tensão H1 e H2 e os terminais secundários X1 e X2, como visto na \autoref{fig:tca}.
+
+\begin{figure}[htb]
+  \caption{Simbologia e circuito equivalente simplificado do TC}
+  \label{fig:tca}
+  \centering
+  \subfloat {
+  \includegraphics[width=5cm]{tca.jpg}
+  }
+  \subfloat {
+  \includegraphics[width=5.8cm]{tcb.jpg}
+  }
+% \legend{Fonte: Do autor}
+\end{figure}\par
+O ponto, para transformadores com polaridade aditiva, indica onde entra a corrente no primário e onde sai a corrente no secundário (defasagem de 180º). Modelos industriais de TC’s têm os terminais de alta tensão marcados como P1 e P2 (Primário 1 e Primário 2), sendo que em muitos casos pode haver diferentes ligações do circuito primário que permitam alterar a relação de transformação. Os terminais secundários são marcados como 1s1, 1s2, 2s2 (número, algarismo, número), indicando respectivamente o número do enrolamento, o símbolo de terminal secundário (s) e o número da derivação do terminal secundário.\par
+\begin{figure}[htb]
+  \caption{Placa de identificação de um TC utilizado no barramento de 138 kV}
+  \centering
+  \includegraphics[width=10.8cm]{placatc.jpg}
+% \legend{Fonte: Do autor}
+  \label{fig:placatc}
+\end{figure}
+
+O circuito equivalente aproximado para um transformador de corrente é mostrado na Figura 10, onde a transformação da corrente entre os circuitos primário e secundário é feita sem perdas. A impedância de dispersão do primário Z1 é multiplicada pelo quadrado da relação $N^{2}$ quando referida ao secundário. A impedância de dispersão secundária é Z2. Os componentes de perdas no núcleo por correntes parasitas e por magnetização são dados por Zm e a impedância de carga é dada por Zc. Este circuito generalizado pode ser simplificado como mostrado no esquema ao lado. A impedância primária Z1 pode ser desprezada, uma vez que o reduzido número de espiras no primário (o que é verdadeiro para a maioria dos TC’s comerciais) tem pequena resistência e pouca dispersão. A corrente através do ramo magnetizante Xm é Im, chamada corrente de excitação. A corrente de excitação é atrasada de 90º em relação a V1'.\par
+\begin{figure}[htb]
+  \caption{Foto de um Transformador de Corrente}
+  \centering
+  \includegraphics[width=3cm]{fototc.pdf}
+% \legend{Fonte: Do autor}
+  \label{fig:fototc}
+\end{figure}
+
+\section{Transformador de Potencial (TP)}
+Transformador de Potencial (TP) é um equipamento usado principalmente para sistemas de medição de tensão elétrica, sendo capaz de reduzir a tensão do circuito para níveis compatíveis com a máxima suportável pelos instrumentos de medição. Sua principal aplicação é na medição de tensões com valores elevados, ou seja, em seu circuito primário é conectada a tensão a ser medida, sendo que no secundário será reproduzida uma tensão reduzida e diretamente proporcional a do primário. Assim, com menor custo e maior segurança, pode-se conectar o instrumento de medição no secundário. A razão entre a tensão no primário sobre a tensão apresentada no secundário de qualquer transformador é uma constante chamada de relação de transformação (RT). A RT é determinada na fabricação do TP pela razão entre o número de espiras do enrolamento primário sobre o número de espiras do enrolamento secundário, assim conhecendo-se a RT e a tensão no circuito secundário, tem-se o valor da tensão no circuito primário. Os TPs podem ser considerados especiais, pois são fabricados de forma a apresentar uma RT com ótima exatidão, ou seja, uma pequena variação na tensão do primário causará uma variação proporcional também no secundário, permitindo assim que indicação no instrumento de medição apresente uma incerteza de medição muito pequena. A tensão reduzida do circuito secundário do TP também é usada para alimentar, de forma igualmente segura, os circuitos de proteção e controle de subestações. Os principais componentes de um TP é mostrado na \autoref{fig:vistatp}.
+
+\begin{figure}[htb]
+  \caption{Identificação das partes de um TP}
+  \centering
+  \includegraphics[width=7cm]{vistatp.jpg}
+% \legend{Fonte: Do autor}
+  \label{fig:vistatp}
+\end{figure}
+
+\begin{longtable}{|l|l|l|l|}
+\caption{Identificação das partes de um TP}
+\\ \hline
+  Pos. & Componente & Material & Acabamento \\ \hline
+  1 & Terminal de Linha & Liga de Alumínio & Natural \\ \hline
+  2 & Placa Superior & Liga de Alumínio & A+B \\ \hline
+  3 & Anel de Junção & Liga de Alumínio & A+B \\ \hline
+  4 & Placa Inferior & Liga de Alumínio & A+B \\ \hline
+  5 & Flange do isolador & Liga de Alumínio & A+B \\ \hline
+  6 & Caixa de terminais secundários & Liga de Alumínio & A+B \\ \hline
+  7 & Unidade Eletromagnética & Liga de Alumínio & A+B \\ \hline
+\end{longtable}
 
 \section{Chave seccionadora}
 As chaves podem desempenhar nas subestações diversas funções, sendo a mais comum a de secionamento de circuitos por necessidade operativa, ou por necessidade de isolar componentes do sistema (equipamentos e linhas) para a realização de manutenção nos mesmos. Neste último caso, a chave aberta que isola o componente em manutenção deve ter uma suportabilidade entre terminais às solicitações dielétricas de forma que o pessoal de campo possa executar o serviço de manutenção em condições adequadas de segurança. A manutenção em uma única chave normalmente acarreta desligamentos indesejáveis nas subestações, chegando, em alguns casos, a provocar o desligamento de toda a subestação. Este caso que ocorre, por exemplo, durante a manutenção dos secionadores ligados à barra principal de subestações com arranjo barra principal/barra transferência.
@@ -354,6 +418,17 @@ As chaves podem desempenhar nas subestações diversas funções, sendo a mais c
   \includegraphics[width=10cm]{chavesec.pdf}
 % \legend{Fonte: Do autor}
   \label{fig:chavesec}
+\end{figure}
+
+\section{Painéis}
+Os quadros de baixa tensão compõem-se de um ou mais painéis modulares configurando seções verticais blindadas com dimensões padronizadas e com possibilidade de ampliar o número de módulos de um quadro através de simples acoplamento. Basicamente um painel de distribuição contém unidades de manobra de circuitos alimentadores com chave secionadora com fusíveis, ou disjuntor. A fiação de comando entre as unidades, quando houver, está disposta em canaletas verticais em cada painel e a interligação entre painéis pode ser executada no topo e/ou na parte inferior dos mesmos. Todas as unidades de controle e/ou distribuição são montadas em compartimentos individuais.
+
+\begin{figure}[htb]
+  \caption{Vistas dos painéis da casa de comando}
+  \centering
+  \includegraphics[width=10.8cm]{paineis.pdf}
+% \legend{Fonte: Do autor}
+  \label{fig:paineis}
 \end{figure}
 
 \section{Disjuntor}
@@ -390,6 +465,110 @@ Alguns tipos de disjuntores de alta potência:\par
 \item Disjuntor a vácuo;
 \item Disjuntor a hexafluoreto de enxofre (SF6); 
 \end{itemize}
+
+\section{Transformador de Potência}
+A invenção do transformador de potência, que remonta o fim do século XIX, tornou-se possível o desenvolvimento do moderno sistema de alimentação em corrente alternada, com subestações de potência freqüentemente localizadas a muitos quilômetros dos centros de consumo (carga). Antes disto, nos primórdios do suprimento de eletricidade pública, estes eram sistemas de corrente contínua, com a fonte de geração, por necessidade, localizados próximo do local de consumo.\par
+Indústrias pioneiras no fornecimento de eletricidade foram rápidas em reconhecer os benefícios de uma ferramenta a qual poderia dispor alta corrente, normalmente obtida a baixa tensão de saída de um gerador elétrico, e transformá-lo para um determinado nível de tensão possível de transmiti-la em condutores de dimensões práticos a consumidores que, naquele tempo, poderiam estar afastados a um quilômetro ou mais e poderiam fazer isto com uma eficiência e que, para os padrões da época, era nada menos que fenomenal.\par
+Um sistema de corrente alternada opera, em cada uma de suas partes, com a tensão mais conveniente, tanto do ponto de vista técnico quanto do ponto de vista econômico. Assim, têm-se tensões entre 13,8 e 25 kV na geração, entre 138 e 765 kV na transmissão, entre 13,8 e 34,5 kV na distribuição. Esta enorme flexibilidade é obtida através dos transformadores, equipamentos estáticos, de alta eficiência e grande confiabilidade. O princípio de funcionamento é ilustrado na Figura . Sobre circuito magnético, formado de chapas de aço-silício, enrolam-se duas bobinas com N1 e N2 espiras, respectivamente. Supondo-se que o fluxo alternado $\phi$ circule, apenas, no circuito magnético, e desprezando-se as resistências, tensão por espira será constante e V1/V2=N2/N1. Estas simples relações, bastante próximas das verificadas na prática, mostram como é possível transformar tensões e correntes e interligar, assim diferentes partes de um sistema de transmissão.
+
+\begin{figure}[htb]
+  \caption{Princípio básico de um transformador}
+  \centering
+  \includegraphics[width=10.8cm]{transformador.jpg}
+% \legend{Fonte: Do autor}
+  \label{fig:transformador}
+\end{figure}
+
+Os transformadores elevadores de usinas são de dois enrolamentos, o primário em delta e o secundário em estrela aterrada. Os demais transformadores do sistema são, em geral, autotransformadores, em estrela aterrada. Os autotransformadores, geralmente, possuem enrolamento terciário em delta, de 13,8 kV, para ligação de compensação reativa e/ou para alimentação de serviços auxiliares, com 1/3 da potência dos outros enrolamentos. Quando o terciário não for necessário para essas funções, sua exclusão depende de estudos de circulação de harmônicos de seqüência zero, de estudos de energização e de sua necessidade ou não para a realização de ensaios.\par
+
+\begin{figure}[htb]
+  \caption{Tipos de enrolamentos de transformadores de potência}
+  \centering
+  \includegraphics[width=10.8cm]{tiposdetrafo.jpg}
+% \legend{Fonte: Do autor}
+  \label{fig:tiposdetrafo}
+\end{figure}
+
+\begin{figure}[htb]
+  \caption{Tipos de ligação dos enrolamentos de um transformador de potência}
+  \centering
+  \includegraphics[width=10.8cm]{tiposdenrol.jpg}
+% \legend{Fonte: Do autor}
+  \label{fig:tiposdenrol}
+\end{figure}
+
+\begin{figure}[htb]
+  \caption{Placa de identificação de um transformador de potência}
+  \centering
+  \includegraphics[width=10.8cm]{placatrafo.pdf}
+% \legend{Fonte: Do autor}
+  \label{fig:placatrafo}
+\end{figure}
+
+\subsection{Derivações}
+Para adequar a tensão primária do transformador à tensão de alimentação, o enrolamento primário, normalmente TS, é dotado de derivações (TAPs), que podem ser escolhidos mediante a utilização de um painel de ligações ou comutador, conforme projeto e tipo construtivo, instalados junto à parte ativa, dentro do tanque. Este aparato, na maioria dos transformadores de potência, deve ser manobrado com o transformador desconectado da rede de alimentação.
+
+\subsection{Acessórios}
+Outros componentes são necessários para o perfeito funcionamento do
+transformador. Na tabela 5 encontra-se este componentes chamados acessórios, em
+função da potência. São os acessórios que informam através de seus contatos, as
+condições de operação do transformador.
+
+\subsubsection{Indicador de Nível de Óleo}
+O óleo isolante do transformador se dilata ou se contrai conforme a variação da temperatura ambiente e variação da carga alimentada pelo transformador, em função disso, haverá elevação ou abaixamento no nível de óleo. Sendo assim, a finalidade do indicador de nível de óleo é mostrar com perfeição o nível de óleo no visor e ainda servir como aparelho de proteção ao transformador. O ponteiro indicador de nível de óleo é movimentado por meio de dois magnéticos (ímãs) permanentes, que são acoplados a um flutuador (bóia). O movimento é efetuado pela bóia, de acordo com o nível de óleo, que transmite indicações precisas ao ponteiro, devido a grande sensibilidade dos magnéticos.
+
+\subsubsection{Temômetro de Óleo}
+O termômetro é utilizado para indicação da temperatura do óleo, e o termômetro conhecido como termômetro com capilar é usado em transformadores de potência. São constituídos de um bulbo, um capilar e um mostrador, o mostrador é constituído de uma caixa, um visor com indicador, micro-ruptores, dois a quatro ponteiros de limite, que se movimentam apenas por ação externa, e um ponteiro d e indicação de temperatura máxima. Este ponteiro é impulsionado pela agulha de temperatura, apenas quando em ascensão desta, pois na redução fica imóvel, possibilitando assim, a verificação da temperatura máxima atingida em um dado período. Conforme a variação da temperatura do bulbo, o líquido (fluído térmico) em seu interior sofre dilatação ou contração, transmitindo a variação de temperatura até o mecanismo interno do mostrador do termômetro, no mesmo instante o ponteiro indicador é acionado. Quando o valor da temperatura atingir os valores ajustados para fechamento dos micro-ruptores, o sinal será transmitido ao sistema de proteção podendo acionar o alarme, desligando e fazendo o controle automático do dispositivo de resfriamento do transformador imerso em óleo.
+
+\subsubsection{Transformador de Corrente}
+São utilizados para obter a corrente de qualquer dos enrolamentos do transformador. Os transformadores de corrente tipo bucha, são constituídos apenas do enrolamento secundário pois o primário é obtido diretamente do cabo de conexão entre a bucha e o enrolamento do transformador no qual o TC está instalado e podem ser de medição ou de proteção.
+
+\subsubsection{Termômetro do Enrolamento com Imagem Térmica}
+A imagem térmica é a técnica utilizada para medir a temperatura no enrolamento do transformador. Ela é denominada imagem térmica por reproduzir indiretamente a temperatura do enrolamento. A temperatura do enrolamento, que é a parte mais quente do transformador, é a temperatura do óleo acrescida da sobre-elevação da temperatura do enrolamento em relação ao óleo. O termômetro do enrolamento com imagem térmica e seu diagrama esquemático é composto de uma resistência de aquecimento e um sensor de temperatura simples ou duplo, ambos encapsulados e montados em um poço protetor, imerso em uma câmara de óleo. O conjunto é instalado na tampa do transformador, equalizando-se com a temperatura do topo do óleo. A resistência de aquecimento é alimentada por um transformador de corrente associado ao enrolamento (normalmente) secundário do transformador principal indicando assim a temperatura no ponto mais quente do enrolamento. Portanto, a elevação da temperatura da resistência de aquecimento é proporcional à elevação da temperatura do enrolamento além da temperatura máxima do óleo. A constante do tempo do sistema é da mesma ordem de grandeza do enrolamento, logo o sistema reproduz uma verdadeira imagem térmica da temperatura do enrolamento.
+
+\subsubsection{Controladores Micro-Processados de Temperatura}
+Os controladores micro-processados de temperatura e nível de óleo foram desenvolvidos para substituir, com vantagens da tecnologia micro-processada, os termômetros de óleo e enrolamento e indicadores de nível tradicionais utilizados em transformadores e reatores de potência. Este equipamento recebe o valor da resistência de um sensor e o transforma (através de um transdutor incorporado) em temperatura equivalente, a qual é vista em painel frontal digital, podendo ser transmitida remotamente através de interface serial RS485 ou sinal analógico. Desempenha diversas funções de controle e acionamento de contatos, sendo que através de teclado frontal podemos configurar os parâmetros de sua atuação e ler os valores medidos e ajustados.
+
+\subsubsection{Válvula de Alívio de Pressão}
+A válvula de alívio de pressão, de fechamento automático, instalada em transformadores imersos em líquido isolante, tem a finalidade de protegê-los contra uma possível deformação ou ruptura do tanque em casos de defeitos internos com aparecimento de pressão elevada. A válvula é extremamente sensível e rápida (opera em menos de dois milésimos de segundo), fecha-se automaticamente após a operação impedindo assim a entrada de qualquer agente externo no interior do transformador. Possui contatos para alarme e desligamento.
+
+\subsubsection{Relê Detector de Gás Tipo Buchholz}
+O relé de gás tem por finalidade proteger equipamentos imersos em líquido isolante, através da supervisão do fluxo anormal do óleo ou ausência, e a formação anormal de gases pelo equipamento. São utilizados em transformadores que possuem tanque para expansão de líquido isolante. Este tipo de relé detecta de forma precisa, por exemplo, os seguintes problemas: vazamento de líquido isolante, curto-circuito interno do equipamento ocasionando grande deslocamento de líquido isolante, formação de gases internos devido a falhas intermitentes ou contínuas que estejam ocorrendo no interior do equipamento. O relé detector de gás é normalmente instalado entre o tanque principal e o tanque de expansão do óleo dos transformadores. A carcaça do relé é de ferro fundido, possuindo duas aberturas flangeadas e ainda dois visores nos quais está indicada uma escala graduada de volume de gás. Internamente encontram-se duas bóias de gás no relé, a bóia superior é forçada a descer em caso de acúmulo de gás (isto acontece também caso haja vazamento de óleo). Se por sua vez uma produção excessiva de gás provoca uma circulação de óleo no relé, é a bóia inferior que reage, antes mesmo que os gases formados atinjam o relé. Em ambos os casos, as bóias ao sofrerem o deslocamento acionam contatos.
+
+\subsubsection{Secador de Ar de Sílica Gel}
+O secador de ar de sílica gel é usado nos transformadores providos de conservador de óleo, funcionando como um desumidificador de ar do transformador. Para evitar a deterioração do óleo do equipamento ou bolsa de borracha pelas impurezas e umidade no ar respirado, coloca-se um copo com óleo e sílica gel na passagem por onde o ar é suspirado. Quando o nível do óleo no conservador baixar, haverá o respiro de ar atmosférico, este ar passará primeiramente pelo copo de óleo, onde ficarão eliminadas as impurezas sólidas e em seguida o ar atravessa os cristais de sílica gel, que retiram a umidade do ar, em seguida, já totalmente limpo e sem umidade, o ar penetra no conservador. O ar ao passar pela sílica gel deixará na mesma a umidade, fazendo que a sílica gel troque de coloração, até a sua saturação conforme indicado abaixo:\par
+\begin{itemize}
+\item coloração laranja: sílica gel seca;
+\item coloração amarela: sílica gel com aproximadamente 20\% da umidade absorvida;
+\item  coloração amarelo-claro: sílica gel com 100\% de umidade absorvida (saturada); para regeneração da sílica gel recomenda-se colocar em estufa com temperatura máxima de 120ºC de 2 a 4 horas. 
+\end{itemize}
+
+\subsubsection{Relé de Pressão Súbita}
+O relê de pressão súbita é um equipamento de proteção para transformadores do tipo selado. Normalmente o relé de pressão súbita é instalado acima do nível máximo do líquido isolante, no espaço compreendido entre o líquido isolante e a tampa do transformador. Entretanto é aceitável também a montagem horizontal, sobre a tampa do transformador. O relé é projetado para atuar quando ocorrem defeitos no transformador que produzem pressão interna anormal, sendo sua operação ocasionada somente pelas mudanças rápidas da pressão interna independente da pressão de operação do transformador. Por outro lado, o relé não opera devido a mudanças lentas de pressão, próprias do funcionamento normal do transformador, bem como durante perturbações do sistema (raios, sobre-tensão de manobra ou curto-circuito), a menos que tais perturbações produzam danos no transformador.
+
+\subsubsection{Manômetro e Manovacuômetro}
+O manômetro é um instrumento utilizado para medir a pressão interna do tanque de óleo. E o manovacuômetro mede pressão e vácuo. Podem possuir contatos de atuação.
+
+\subsubsection{Indicador de Fluxo de Óleo}
+O indicador de fluxo indica a vazão em circuitos de resfriamento de transformadores. O princípio de funcionamento é um sistema de palheta fixa a um eixo transversal, fazendo girar uma haste e cujo movimento é regulado por uma mola. O movimento do eixo ao ponteiro é transmitido por imãs permanentes, acoplados magneticamente, através de uma parede que isola a parte inferior do tubo ao lado externo. O mecanismo externo de indicação aloja também o(s) contato(s) elétrico(s).O acionamento sinaliza a ausência de fluxo, sendo necessário uma vazão nominal conforme tabela 8.
+
+\subsubsection{Relé Regulador de Tensão}
+Tem como finalidade manter a tensão do transformador sob a mesma tensão da rede de alimentação. Através de um transformador de potencial e um transformador de corrente instalados na rede de alimentação (normalmente no lado de baixa tensão), faz um comparativo entre a tensão na rede e o valor nele ajustado da tensão e corrente nominais a serem fornecidas. Caso os valores permanecerem divergentes por tempo maior do que um pré-ajustado, o equipamento, através do fechamento de seus contatos envia sinais de “elevar TAP” ou “baixar TAP” ao mecanismo motorizado do comutador sob carga. Também possuem proteção contra sobre-corrente, sub-tensão e sobre-tensão, bloqueando a comutação sob carga em caso de ocorrência.
+
+\subsubsection{Paralelismo entre Transformadores}
+Respeitadas as condições de rede de paralelismo entre os transformadores, o comando dos circuitos auxiliares pode ser colocado para trabalhar em paralelo da seguinte maneira: o controle pode ser feito por um sistema analógico, através de lógica com contatos ou pode também ser feito com sistema micro-processado. O sistema micro-processado reduz consideravelmente as dimensões da caixa de equipamentos auxiliares, possibilita o controle e supervisão (local e remota) da operação em paralelo de transformadores equipados com comutadores de derivação em carga. O sistema feito através da lógica de contatos também poderá ter indicação remota, porém será necessária a utilização de diversos componentes elétricos e eletrônicos para desempenhar todas as funções feitas com apenas dois equipamentos micro-processados. Modelos atuais de relés reguladores de tensão incluem saídas para utilização em paralelo com demais relés reguladores. Desta forma pode-se trabalhar com até 6 transformadores em paralelo, sendo necessário para tal, que cada transformador possua seu equipamento. Quando o paralelismo é feito através de equipamento específico, é necessário apenas um relé regulador de tensão para cada transformador, porém é necessário um equipamento de paralelismo para cada transformador.\par
+Existem dois métodos para o paralelismo de transformadores com CDC:\par
+\begin{itemize}
+\item Corrente circulante: o objetivo deste sistema é manter a corrente de circulação entre os transformadores a menor possível, admitindo assim pequena diferença nos TAP do comutador;
+\item Mestre-comandado (padrão da NBR 9368): os controladores quando colocados em paralelo com os transformadores no mesmo TAP, o mantém durante as comutações, transmitindo o comando do primeiro transformador (mestre) para os demais (comandados). Não admite diferença de TAP entre os transformadores.
+\end{itemize}
+O diagrama esquemático de comutação sob carga com relé regulador de tensão e supervisor de paralelismo com sistema micro-processado é mostrado na figura 31.\par
+
+\subsubsection{Monitoramento de Buchas}
+O monitor de buchas permite que seja efetuada de forma \textit{on-line}, durante a operação normal, a monitoração da capacitância e do fator de dissipação da isolação de buchas, TC’s e outros equipamentos. Com isso, podem ser evitadas falhas potencialmente catastróficas, ao se detectar os problemas ainda em fase incipiente. A forma construtiva da bucha capacitiva dá origem a uma capacitância entre o condutor central da bucha e o terra. Uma vez energizada a bucha, esta capacitância permite a passagem de uma corrente de fuga para o terra. Esta corrente também possui componente resistiva. Qualquer alteração nestes dois parâmetros da isolação da bucha causa uma mudança correspondente na corrente de fuga. Opera medindo continuamente as correntes de fuga das 3 buchas de um conjunto trifásico, através de adaptadores conectados aos TAPs de teste ou TAPs de tensão de cada bucha e compara estes valores com os valores iniciais das buchas obtidos em ensaios do fabricante, no caso de buchas novas, ou de ensaios off-line realizados na instalação do Monitor de Buchas. É composto pelo adaptador (1 por bucha), módulo de medição (1 para cada 3 buchas do enrolamento de mesmo nível de tensão) e módulo de interface (1 para até 3 níveis de tensão do mesmo transformador).
+
+\subsubsection{Monitor de Gás e Umidade}
+Os gases combustíveis dissolvidos no óleo de equipamentos de Alta Tensão são reconhecidamente um dos melhores indicadores do estado interno do equipamento e de sua isolação, e o hidrogênio é considerado um gás chave por estar presente na maioria dos defeitos em transformadores, podendo indicar a ocorrência de falhas ainda em fase incipiente. O Monitor de Gás e Umidade “GMM” efetua a monitoração on-line da quantidade de hidrogênio dissolvido em óleo mineral isolante, emitindo alarmes tanto por níveis de hidrogênio acima do limite estabelecido, quanto por taxa de aumento elevada. Mede o conteúdo de hidrogênio sem interferência cruzada de outros gases, como por exemplo, o CO. Desta forma é obtida a máxima sensibilidade na detecção de defeitos, sem que as alterações no hidrogênio sejam encobertas por concentrações constantes e muitas vezes mais elevadas de CO. O GMM monitora também a saturação de água no óleo (0 a 100\%) e a temperatura do óleo associada, calculando o teor de água (ppm) no óleo isolante. O Monitor de Gás e Umidade é composto pelo Módulo de Medição e pelo Módulo de Interface. O Módulo de Medição deve ser acoplado a uma válvula de óleo do tipo passagem livre localizada em local com boa circulação de óleo. Possui uma porta de comunicação serial RS485, através da qual são transmitidas as informações ao Módulo de Interface, que disponibiliza as informações localmente em seus displays e remotamente através das saídas analógicas, saídas a contatos secos e pelas portas seriais RS485 e RS232 com protocolos Modbus RTU e DNP3.0. O Módulo de Interface efetua também os cálculos de tendência e o armazenamento de valores históricos em memória não volátil.
 
 \section{Relés}
 Os relés são os elementos mais importantes dos sistemas de proteção. A função primordial deles é identificar os defeitos, localizá-los da maneira mais exata possível e alertar a quem opera o sistema; promovendo o disparo de alarmes, sinalizações e enviando sinais para a abertura de disjuntores de modo a isolar o defeito.\par
@@ -609,180 +788,6 @@ O comprimento máximo de cabos de sinal é de 600 m (sem blindagem) ou de 1000 m
 % \legend{Fonte: Do autor}
   \label{fig:anunciador}
 \end{figure}
-
-\section{Painéis}
-Os quadros de baixa tensão compõem-se de um ou mais painéis modulares configurando seções verticais blindadas com dimensões padronizadas e com possibilidade de ampliar o número de módulos de um quadro através de simples acoplamento. Basicamente um painel de distribuição contém unidades de manobra de circuitos alimentadores com chave secionadora com fusíveis, ou disjuntor. A fiação de comando entre as unidades, quando houver, está disposta em canaletas verticais em cada painel e a interligação entre painéis pode ser executada no topo e/ou na parte inferior dos mesmos. Todas as unidades de controle e/ou distribuição são montadas em compartimentos individuais.
-
-\begin{figure}[htb]
-  \caption{Vistas dos painéis da casa de comando}
-  \centering
-  \includegraphics[width=10.8cm]{paineis.pdf}
-% \legend{Fonte: Do autor}
-  \label{fig:paineis}
-\end{figure}
-
-\section{Transformador de Corrente (TC)}
-Um transformador de corrente ou simplesmente TC é um dispositivo que reproduz no seu circuito secundário, a corrente que circula em um enrolamento primário com sua posição vetorial substancialmente mantida, em uma proporção definida, conhecida e adequada. Os transformadores de corrente, também chamados de transformadores de instrumentos, utilizados em aplicações de alta tensão (situações essas onde circulam, frequentemente, altas correntes), fornecem correntes suficientemente reduzidas e isoladas do circuito primário de forma a possibilitar o seu uso por equipamentos de medição, controle e proteção. A simbologia padrão dos transformadores de corrente mostra os terminais primários de alta tensão H1 e H2 e os terminais secundários X1 e X2, como visto na \autoref{fig:tca}.
-
-\begin{figure}[htb]
-  \caption{Simbologia e circuito equivalente simplificado do TC}
-  \label{fig:tca}
-  \centering
-  \subfloat {
-  \includegraphics[width=5cm]{tca.jpg}
-  }
-  \subfloat {
-  \includegraphics[width=5.8cm]{tcb.jpg}
-  }
-% \legend{Fonte: Do autor}
-\end{figure}\par
-O ponto, para transformadores com polaridade aditiva, indica onde entra a corrente no primário e onde sai a corrente no secundário (defasagem de 180º). Modelos industriais de TC’s têm os terminais de alta tensão marcados como P1 e P2 (Primário 1 e Primário 2), sendo que em muitos casos pode haver diferentes ligações do circuito primário que permitam alterar a relação de transformação. Os terminais secundários são marcados como 1s1, 1s2, 2s2 (número, algarismo, número), indicando respectivamente o número do enrolamento, o símbolo de terminal secundário (s) e o número da derivação do terminal secundário.\par
-\begin{figure}[htb]
-  \caption{Placa de identificação de um TC utilizado no barramento de 138 kV}
-  \centering
-  \includegraphics[width=10.8cm]{placatc.jpg}
-% \legend{Fonte: Do autor}
-  \label{fig:placatc}
-\end{figure}
-
-O circuito equivalente aproximado para um transformador de corrente é mostrado na Figura 10, onde a transformação da corrente entre os circuitos primário e secundário é feita sem perdas. A impedância de dispersão do primário Z1 é multiplicada pelo quadrado da relação $N^{2}$ quando referida ao secundário. A impedância de dispersão secundária é Z2. Os componentes de perdas no núcleo por correntes parasitas e por magnetização são dados por Zm e a impedância de carga é dada por Zc. Este circuito generalizado pode ser simplificado como mostrado no esquema ao lado. A impedância primária Z1 pode ser desprezada, uma vez que o reduzido número de espiras no primário (o que é verdadeiro para a maioria dos TC’s comerciais) tem pequena resistência e pouca dispersão. A corrente através do ramo magnetizante Xm é Im, chamada corrente de excitação. A corrente de excitação é atrasada de 90º em relação a V1'.\par
-\begin{figure}[htb]
-  \caption{Foto de um Transformador de Corrente}
-  \centering
-  \includegraphics[width=3cm]{fototc.pdf}
-% \legend{Fonte: Do autor}
-  \label{fig:fototc}
-\end{figure}
-
-\section{Transformador de Potencial (TP)}
-Transformador de Potencial (TP) é um equipamento usado principalmente para sistemas de medição de tensão elétrica, sendo capaz de reduzir a tensão do circuito para níveis compatíveis com a máxima suportável pelos instrumentos de medição. Sua principal aplicação é na medição de tensões com valores elevados, ou seja, em seu circuito primário é conectada a tensão a ser medida, sendo que no secundário será reproduzida uma tensão reduzida e diretamente proporcional a do primário. Assim, com menor custo e maior segurança, pode-se conectar o instrumento de medição no secundário. A razão entre a tensão no primário sobre a tensão apresentada no secundário de qualquer transformador é uma constante chamada de relação de transformação (RT). A RT é determinada na fabricação do TP pela razão entre o número de espiras do enrolamento primário sobre o número de espiras do enrolamento secundário, assim conhecendo-se a RT e a tensão no circuito secundário, tem-se o valor da tensão no circuito primário. Os TPs podem ser considerados especiais, pois são fabricados de forma a apresentar uma RT com ótima exatidão, ou seja, uma pequena variação na tensão do primário causará uma variação proporcional também no secundário, permitindo assim que indicação no instrumento de medição apresente uma incerteza de medição muito pequena. A tensão reduzida do circuito secundário do TP também é usada para alimentar, de forma igualmente segura, os circuitos de proteção e controle de subestações. Os principais componentes de um TP é mostrado na \autoref{fig:vistatp}.
-
-\begin{figure}[htb]
-  \caption{Identificação das partes de um TP}
-  \centering
-  \includegraphics[width=7cm]{vistatp.jpg}
-% \legend{Fonte: Do autor}
-  \label{fig:vistatp}
-\end{figure}
-
-\begin{longtable}{|l|l|l|l|}
-\caption{Identificação das partes de um TP}
-\\ \hline
-  Pos. & Componente & Material & Acabamento \\ \hline
-  1 & Terminal de Linha & Liga de Alumínio & Natural \\ \hline
-  2 & Placa Superior & Liga de Alumínio & A+B \\ \hline
-  3 & Anel de Junção & Liga de Alumínio & A+B \\ \hline
-  4 & Placa Inferior & Liga de Alumínio & A+B \\ \hline
-  5 & Flange do isolador & Liga de Alumínio & A+B \\ \hline
-  6 & Caixa de terminais secundários & Liga de Alumínio & A+B \\ \hline
-  7 & Unidade Eletromagnética & Liga de Alumínio & A+B \\ \hline
-\end{longtable}
-
-\section{Transformador de Potência}
-A invenção do transformador de potência, que remonta o fim do século XIX, tornou-se possível o desenvolvimento do moderno sistema de alimentação em corrente alternada, com subestações de potência freqüentemente localizadas a muitos quilômetros dos centros de consumo (carga). Antes disto, nos primórdios do suprimento de eletricidade pública, estes eram sistemas de corrente contínua, com a fonte de geração, por necessidade, localizados próximo do local de consumo.\par
-Indústrias pioneiras no fornecimento de eletricidade foram rápidas em reconhecer os benefícios de uma ferramenta a qual poderia dispor alta corrente, normalmente obtida a baixa tensão de saída de um gerador elétrico, e transformá-lo para um determinado nível de tensão possível de transmiti-la em condutores de dimensões práticos a consumidores que, naquele tempo, poderiam estar afastados a um quilômetro ou mais e poderiam fazer isto com uma eficiência e que, para os padrões da época, era nada menos que fenomenal.\par
-Um sistema de corrente alternada opera, em cada uma de suas partes, com a tensão mais conveniente, tanto do ponto de vista técnico quanto do ponto de vista econômico. Assim, têm-se tensões entre 13,8 e 25 kV na geração, entre 138 e 765 kV na transmissão, entre 13,8 e 34,5 kV na distribuição. Esta enorme flexibilidade é obtida através dos transformadores, equipamentos estáticos, de alta eficiência e grande confiabilidade. O princípio de funcionamento é ilustrado na Figura . Sobre circuito magnético, formado de chapas de aço-silício, enrolam-se duas bobinas com N1 e N2 espiras, respectivamente. Supondo-se que o fluxo alternado $\phi$ circule, apenas, no circuito magnético, e desprezando-se as resistências, tensão por espira será constante e V1/V2=N2/N1. Estas simples relações, bastante próximas das verificadas na prática, mostram como é possível transformar tensões e correntes e interligar, assim diferentes partes de um sistema de transmissão.
-
-\begin{figure}[htb]
-  \caption{Princípio básico de um transformador}
-  \centering
-  \includegraphics[width=10.8cm]{transformador.jpg}
-% \legend{Fonte: Do autor}
-  \label{fig:transformador}
-\end{figure}
-
-Os transformadores elevadores de usinas são de dois enrolamentos, o primário em delta e o secundário em estrela aterrada. Os demais transformadores do sistema são, em geral, autotransformadores, em estrela aterrada. Os autotransformadores, geralmente, possuem enrolamento terciário em delta, de 13,8 kV, para ligação de compensação reativa e/ou para alimentação de serviços auxiliares, com 1/3 da potência dos outros enrolamentos. Quando o terciário não for necessário para essas funções, sua exclusão depende de estudos de circulação de harmônicos de seqüência zero, de estudos de energização e de sua necessidade ou não para a realização de ensaios.\par
-
-\begin{figure}[htb]
-  \caption{Tipos de enrolamentos de transformadores de potência}
-  \centering
-  \includegraphics[width=10.8cm]{tiposdetrafo.jpg}
-% \legend{Fonte: Do autor}
-  \label{fig:tiposdetrafo}
-\end{figure}
-
-\begin{figure}[htb]
-  \caption{Tipos de ligação dos enrolamentos de um transformador de potência}
-  \centering
-  \includegraphics[width=10.8cm]{tiposdenrol.jpg}
-% \legend{Fonte: Do autor}
-  \label{fig:tiposdenrol}
-\end{figure}
-
-\begin{figure}[htb]
-  \caption{Placa de identificação de um transformador de potência}
-  \centering
-  \includegraphics[width=10.8cm]{placatrafo.pdf}
-% \legend{Fonte: Do autor}
-  \label{fig:placatrafo}
-\end{figure}
-
-
-\subsection{Derivações}
-Para adequar a tensão primária do transformador à tensão de alimentação, o enrolamento primário, normalmente TS, é dotado de derivações (TAPs), que podem ser escolhidos mediante a utilização de um painel de ligações ou comutador, conforme projeto e tipo construtivo, instalados junto à parte ativa, dentro do tanque. Este aparato, na maioria dos transformadores de potência, deve ser manobrado com o transformador desconectado da rede de alimentação.
-
-\subsection{Acessórios}
-Outros componentes são necessários para o perfeito funcionamento do
-transformador. Na tabela 5 encontra-se este componentes chamados acessórios, em
-função da potência. São os acessórios que informam através de seus contatos, as
-condições de operação do transformador.
-
-\subsubsection{Indicador de Nível de Óleo}
-O óleo isolante do transformador se dilata ou se contrai conforme a variação da temperatura ambiente e variação da carga alimentada pelo transformador, em função disso, haverá elevação ou abaixamento no nível de óleo. Sendo assim, a finalidade do indicador de nível de óleo é mostrar com perfeição o nível de óleo no visor e ainda servir como aparelho de proteção ao transformador. O ponteiro indicador de nível de óleo é movimentado por meio de dois magnéticos (ímãs) permanentes, que são acoplados a um flutuador (bóia). O movimento é efetuado pela bóia, de acordo com o nível de óleo, que transmite indicações precisas ao ponteiro, devido a grande sensibilidade dos magnéticos.
-
-\subsubsection{Temômetro de Óleo}
-O termômetro é utilizado para indicação da temperatura do óleo, e o termômetro conhecido como termômetro com capilar é usado em transformadores de potência. São constituídos de um bulbo, um capilar e um mostrador, o mostrador é constituído de uma caixa, um visor com indicador, micro-ruptores, dois a quatro ponteiros de limite, que se movimentam apenas por ação externa, e um ponteiro d e indicação de temperatura máxima. Este ponteiro é impulsionado pela agulha de temperatura, apenas quando em ascensão desta, pois na redução fica imóvel, possibilitando assim, a verificação da temperatura máxima atingida em um dado período. Conforme a variação da temperatura do bulbo, o líquido (fluído térmico) em seu interior sofre dilatação ou contração, transmitindo a variação de temperatura até o mecanismo interno do mostrador do termômetro, no mesmo instante o ponteiro indicador é acionado. Quando o valor da temperatura atingir os valores ajustados para fechamento dos micro-ruptores, o sinal será transmitido ao sistema de proteção podendo acionar o alarme, desligando e fazendo o controle automático do dispositivo de resfriamento do transformador imerso em óleo.
-
-\subsubsection{Transformador de Corrente}
-São utilizados para obter a corrente de qualquer dos enrolamentos do transformador. Os transformadores de corrente tipo bucha, são constituídos apenas do enrolamento secundário pois o primário é obtido diretamente do cabo de conexão entre a bucha e o enrolamento do transformador no qual o TC está instalado e podem ser de medição ou de proteção.
-
-\subsubsection{Termômetro do Enrolamento com Imagem Térmica}
-A imagem térmica é a técnica utilizada para medir a temperatura no enrolamento do transformador. Ela é denominada imagem térmica por reproduzir indiretamente a temperatura do enrolamento. A temperatura do enrolamento, que é a parte mais quente do transformador, é a temperatura do óleo acrescida da sobre-elevação da temperatura do enrolamento em relação ao óleo. O termômetro do enrolamento com imagem térmica e seu diagrama esquemático é composto de uma resistência de aquecimento e um sensor de temperatura simples ou duplo, ambos encapsulados e montados em um poço protetor, imerso em uma câmara de óleo. O conjunto é instalado na tampa do transformador, equalizando-se com a temperatura do topo do óleo. A resistência de aquecimento é alimentada por um transformador de corrente associado ao enrolamento (normalmente) secundário do transformador principal indicando assim a temperatura no ponto mais quente do enrolamento. Portanto, a elevação da temperatura da resistência de aquecimento é proporcional à elevação da temperatura do enrolamento além da temperatura máxima do óleo. A constante do tempo do sistema é da mesma ordem de grandeza do enrolamento, logo o sistema reproduz uma verdadeira imagem térmica da temperatura do enrolamento.
-
-\subsubsection{Controladores Micro-Processados de Temperatura}
-Os controladores micro-processados de temperatura e nível de óleo foram desenvolvidos para substituir, com vantagens da tecnologia micro-processada, os termômetros de óleo e enrolamento e indicadores de nível tradicionais utilizados em transformadores e reatores de potência. Este equipamento recebe o valor da resistência de um sensor e o transforma (através de um transdutor incorporado) em temperatura equivalente, a qual é vista em painel frontal digital, podendo ser transmitida remotamente através de interface serial RS485 ou sinal analógico. Desempenha diversas funções de controle e acionamento de contatos, sendo que através de teclado frontal podemos configurar os parâmetros de sua atuação e ler os valores medidos e ajustados.
-
-\subsubsection{Válvula de Alívio de Pressão}
-A válvula de alívio de pressão, de fechamento automático, instalada em transformadores imersos em líquido isolante, tem a finalidade de protegê-los contra uma possível deformação ou ruptura do tanque em casos de defeitos internos com aparecimento de pressão elevada. A válvula é extremamente sensível e rápida (opera em menos de dois milésimos de segundo), fecha-se automaticamente após a operação impedindo assim a entrada de qualquer agente externo no interior do transformador. Possui contatos para alarme e desligamento.
-
-\subsubsection{Relê Detector de Gás Tipo Buchholz}
-O relé de gás tem por finalidade proteger equipamentos imersos em líquido isolante, através da supervisão do fluxo anormal do óleo ou ausência, e a formação anormal de gases pelo equipamento. São utilizados em transformadores que possuem tanque para expansão de líquido isolante. Este tipo de relé detecta de forma precisa, por exemplo, os seguintes problemas: vazamento de líquido isolante, curto-circuito interno do equipamento ocasionando grande deslocamento de líquido isolante, formação de gases internos devido a falhas intermitentes ou contínuas que estejam ocorrendo no interior do equipamento. O relé detector de gás é normalmente instalado entre o tanque principal e o tanque de expansão do óleo dos transformadores. A carcaça do relé é de ferro fundido, possuindo duas aberturas flangeadas e ainda dois visores nos quais está indicada uma escala graduada de volume de gás. Internamente encontram-se duas bóias de gás no relé, a bóia superior é forçada a descer em caso de acúmulo de gás (isto acontece também caso haja vazamento de óleo). Se por sua vez uma produção excessiva de gás provoca uma circulação de óleo no relé, é a bóia inferior que reage, antes mesmo que os gases formados atinjam o relé. Em ambos os casos, as bóias ao sofrerem o deslocamento acionam contatos.
-
-\subsubsection{Secador de Ar de Sílica Gel}
-O secador de ar de sílica gel é usado nos transformadores providos de conservador de óleo, funcionando como um desumidificador de ar do transformador. Para evitar a deterioração do óleo do equipamento ou bolsa de borracha pelas impurezas e umidade no ar respirado, coloca-se um copo com óleo e sílica gel na passagem por onde o ar é suspirado. Quando o nível do óleo no conservador baixar, haverá o respiro de ar atmosférico, este ar passará primeiramente pelo copo de óleo, onde ficarão eliminadas as impurezas sólidas e em seguida o ar atravessa os cristais de sílica gel, que retiram a umidade do ar, em seguida, já totalmente limpo e sem umidade, o ar penetra no conservador. O ar ao passar pela sílica gel deixará na mesma a umidade, fazendo que a sílica gel troque de coloração, até a sua saturação conforme indicado abaixo:\par
-\begin{itemize}
-\item coloração laranja: sílica gel seca;
-\item coloração amarela: sílica gel com aproximadamente 20\% da umidade absorvida;
-\item  coloração amarelo-claro: sílica gel com 100\% de umidade absorvida (saturada); para regeneração da sílica gel recomenda-se colocar em estufa com temperatura máxima de 120ºC de 2 a 4 horas. 
-\end{itemize}
-
-\subsubsection{Relé de Pressão Súbita}
-O relê de pressão súbita é um equipamento de proteção para transformadores do tipo selado. Normalmente o relé de pressão súbita é instalado acima do nível máximo do líquido isolante, no espaço compreendido entre o líquido isolante e a tampa do transformador. Entretanto é aceitável também a montagem horizontal, sobre a tampa do transformador. O relé é projetado para atuar quando ocorrem defeitos no transformador que produzem pressão interna anormal, sendo sua operação ocasionada somente pelas mudanças rápidas da pressão interna independente da pressão de operação do transformador. Por outro lado, o relé não opera devido a mudanças lentas de pressão, próprias do funcionamento normal do transformador, bem como durante perturbações do sistema (raios, sobre-tensão de manobra ou curto-circuito), a menos que tais perturbações produzam danos no transformador.
-
-\subsubsection{Manômetro e Manovacuômetro}
-O manômetro é um instrumento utilizado para medir a pressão interna do tanque de óleo. E o manovacuômetro mede pressão e vácuo. Podem possuir contatos de atuação.
-
-\subsubsection{Indicador de Fluxo de Óleo}
-O indicador de fluxo indica a vazão em circuitos de resfriamento de transformadores. O princípio de funcionamento é um sistema de palheta fixa a um eixo transversal, fazendo girar uma haste e cujo movimento é regulado por uma mola. O movimento do eixo ao ponteiro é transmitido por imãs permanentes, acoplados magneticamente, através de uma parede que isola a parte inferior do tubo ao lado externo. O mecanismo externo de indicação aloja também o(s) contato(s) elétrico(s).O acionamento sinaliza a ausência de fluxo, sendo necessário uma vazão nominal conforme tabela 8.
-
-\subsubsection{Relé Regulador de Tensão}
-Tem como finalidade manter a tensão do transformador sob a mesma tensão da rede de alimentação. Através de um transformador de potencial e um transformador de corrente instalados na rede de alimentação (normalmente no lado de baixa tensão), faz um comparativo entre a tensão na rede e o valor nele ajustado da tensão e corrente nominais a serem fornecidas. Caso os valores permanecerem divergentes por tempo maior do que um pré-ajustado, o equipamento, através do fechamento de seus contatos envia sinais de “elevar TAP” ou “baixar TAP” ao mecanismo motorizado do comutador sob carga. Também possuem proteção contra sobre-corrente, sub-tensão e sobre-tensão, bloqueando a comutação sob carga em caso de ocorrência.
-
-\subsubsection{Paralelismo entre Transformadores}
-Respeitadas as condições de rede de paralelismo entre os transformadores, o comando dos circuitos auxiliares pode ser colocado para trabalhar em paralelo da seguinte maneira: o controle pode ser feito por um sistema analógico, através de lógica com contatos ou pode também ser feito com sistema micro-processado. O sistema micro-processado reduz consideravelmente as dimensões da caixa de equipamentos auxiliares, possibilita o controle e supervisão (local e remota) da operação em paralelo de transformadores equipados com comutadores de derivação em carga. O sistema feito através da lógica de contatos também poderá ter indicação remota, porém será necessária a utilização de diversos componentes elétricos e eletrônicos para desempenhar todas as funções feitas com apenas dois equipamentos micro-processados. Modelos atuais de relés reguladores de tensão incluem saídas para utilização em paralelo com demais relés reguladores. Desta forma pode-se trabalhar com até 6 transformadores em paralelo, sendo necessário para tal, que cada transformador possua seu equipamento. Quando o paralelismo é feito através de equipamento específico, é necessário apenas um relé regulador de tensão para cada transformador, porém é necessário um equipamento de paralelismo para cada transformador.\par
-Existem dois métodos para o paralelismo de transformadores com CDC:\par
-\begin{itemize}
-\item Corrente circulante: o objetivo deste sistema é manter a corrente de circulação entre os transformadores a menor possível, admitindo assim pequena diferença nos TAP do comutador;
-\item Mestre-comandado (padrão da NBR 9368): os controladores quando colocados em paralelo com os transformadores no mesmo TAP, o mantém durante as comutações, transmitindo o comando do primeiro transformador (mestre) para os demais (comandados). Não admite diferença de TAP entre os transformadores.
-\end{itemize}
-O diagrama esquemático de comutação sob carga com relé regulador de tensão e supervisor de paralelismo com sistema micro-processado é mostrado na figura 31.\par
-
-\subsubsection{Monitoramento de Buchas}
-O monitor de buchas permite que seja efetuada de forma \textit{on-line}, durante a operação normal, a monitoração da capacitância e do fator de dissipação da isolação de buchas, TC’s e outros equipamentos. Com isso, podem ser evitadas falhas potencialmente catastróficas, ao se detectar os problemas ainda em fase incipiente. A forma construtiva da bucha capacitiva dá origem a uma capacitância entre o condutor central da bucha e o terra. Uma vez energizada a bucha, esta capacitância permite a passagem de uma corrente de fuga para o terra. Esta corrente também possui componente resistiva. Qualquer alteração nestes dois parâmetros da isolação da bucha causa uma mudança correspondente na corrente de fuga. Opera medindo continuamente as correntes de fuga das 3 buchas de um conjunto trifásico, através de adaptadores conectados aos TAPs de teste ou TAPs de tensão de cada bucha e compara estes valores com os valores iniciais das buchas obtidos em ensaios do fabricante, no caso de buchas novas, ou de ensaios off-line realizados na instalação do Monitor de Buchas. É composto pelo adaptador (1 por bucha), módulo de medição (1 para cada 3 buchas do enrolamento de mesmo nível de tensão) e módulo de interface (1 para até 3 níveis de tensão do mesmo transformador).
-
-\subsubsection{Monitor de Gás e Umidade}
-Os gases combustíveis dissolvidos no óleo de equipamentos de Alta Tensão são reconhecidamente um dos melhores indicadores do estado interno do equipamento e de sua isolação, e o hidrogênio é considerado um gás chave por estar presente na maioria dos defeitos em transformadores, podendo indicar a ocorrência de falhas ainda em fase incipiente. O Monitor de Gás e Umidade “GMM” efetua a monitoração on-line da quantidade de hidrogênio dissolvido em óleo mineral isolante, emitindo alarmes tanto por níveis de hidrogênio acima do limite estabelecido, quanto por taxa de aumento elevada. Mede o conteúdo de hidrogênio sem interferência cruzada de outros gases, como por exemplo, o CO. Desta forma é obtida a máxima sensibilidade na detecção de defeitos, sem que as alterações no hidrogênio sejam encobertas por concentrações constantes e muitas vezes mais elevadas de CO. O GMM monitora também a saturação de água no óleo (0 a 100\%) e a temperatura do óleo associada, calculando o teor de água (ppm) no óleo isolante. O Monitor de Gás e Umidade é composto pelo Módulo de Medição e pelo Módulo de Interface. O Módulo de Medição deve ser acoplado a uma válvula de óleo do tipo passagem livre localizada em local com boa circulação de óleo. Possui uma porta de comunicação serial RS485, através da qual são transmitidas as informações ao Módulo de Interface, que disponibiliza as informações localmente em seus displays e remotamente através das saídas analógicas, saídas a contatos secos e pelas portas seriais RS485 e RS232 com protocolos Modbus RTU e DNP3.0. O Módulo de Interface efetua também os cálculos de tendência e o armazenamento de valores históricos em memória não volátil.
-
 
 
 
