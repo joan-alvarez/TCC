@@ -1,287 +1,291 @@
 \documentclass[a5paper,english,spanish,brazil]{ufsc-thesis}
 
-% ---
-% PACOTES
-% ---
+	% ---
+	% PACOTES
+	% ---
 
-% ---
-% Pacotes fundamentais 
-% ---
-%\usepackage{lmodern}			% Usa a fonte Latin Modern			
-\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
-\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
-\usepackage{lastpage}			% Usado pela Ficha catalográfica
-\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
-\usepackage{color}				% Controle das cores
+	% ---
+	% Pacotes fundamentais 
+	% ---
+	%\usepackage{lmodern}			% Usa a fonte Latin Modern			
+	\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+	\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+	\usepackage{lastpage}			% Usado pela Ficha catalográfica
+	\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+	\usepackage{color}				% Controle das cores
 
-\usepackage{graphicx}			% Inclusão de gráficos
-\usepackage{subfig}  % usar subfloat duas figuras na mesma figura
-\newcommand{\subfigureautorefname}{\figureautorefname} % fez funcionar o auto ref nas subfiguras
+	\usepackage{graphicx}			% Inclusão de gráficos
+	\usepackage{subfig}  % usar subfloat duas figuras na mesma figura
+	\newcommand{\subfigureautorefname}{\figureautorefname} % fez funcionar o auto ref nas subfiguras
 
-\usepackage{microtype} 			% para melhorias de justificação
-\usepackage{mathtools} %para usar equations
-\usepackage{xfrac} %para usar \sfrac
-\everymath{\displaystyle} %força todas as expressões nem estilo de maior fonte
-%\usepackage{pslatex} % Coloca as letras em Times New Roman, mas não nos Títulos de seções e Capítulos 
-\usepackage{listings}
-\usepackage{listingsutf8}
+	%\renewcommand\theparagraph{\alph{paragraph})} %fazer o \paragraph virar uma subsubsubsection enumerada por letra (a,b,c)
 
-\usepackage{longtable}
-\usepackage{tabularx}
+	\usepackage{microtype} 			% para melhorias de justificação
+	\usepackage{mathtools} %para usar equations
+	\usepackage{xfrac} %para usar \sfrac
+	\everymath{\displaystyle} %força todas as expressões nem estilo de maior fonte
+	%\usepackage{pslatex} % Coloca as letras em Times New Roman, mas não nos Títulos de seções e Capítulos 
+	\usepackage{listings}
+	\usepackage{listingsutf8}
 
-\graphicspath{{figuras/}}
-% ---
-		
-% ---
-% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
-% ---
-\usepackage{lipsum}				% para geração de dummy text
-% ---
+	\usepackage{longtable}
+	\usepackage{tabularx}
 
-% ---
-% Pacotes de citações
-% ---
-\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
-\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+	\graphicspath{{figuras/}}
+	% ---
+			
+	% ---
+	% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+	% ---
+	\usepackage{lipsum}				% para geração de dummy text
+	% ---
 
-
-% ---
-% Informações de dados para CAPA e FOLHA DE ROSTO
-% ---
-\titulo{Repotencialização em Subestações de Alta Tensão Utilizando Módulos de Manobra Híbridos Compactos}
-\autor{Joan Francisco {}Alvarez Burgos}
-\local{Florianópolios, SC-Brasil}
-\data{\today}
-\orientador{Maurício Valencia {}Ferreira da Luz}
-%\coorientador{Equipe \abnTeX}
-%\instituicao{
-%  Universidade Federal de Santa Catarina -- UFSC
-%  \par
-%  Centro Tecnológico -- CTC
-%  \par
-%  Departamento de Engenharia Elétrica -- EEL}
-\instituicao{Universidade Federal de Santa Catarina}
-\centro{Centro Tecnológico -- CTC}
-\programa{Programa de Graduação em Engenharia Elétrica}
-\assuntos{Subestações,Sistemas de Potência,Instalações Elétricas,Orçamentos}
-\tipotrabalho{Trabalho de Conclusão de Curso}
-% O preambulo deve conter o tipo do trabalho, o objetivo, 
-% o nome da instituição e a área de concentração 
-\preambulo{Monografia submetida ao Programa de Graduação em Engenharia Elétrica da Universidade Federal de Santa Catarina como requisito para aprovação na disciplina EEL7890 -- Trabalho de Conclusão de Curso (TCC).}
-% ---
+	% ---
+	% Pacotes de citações
+	% ---
+	\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+	\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
 
 
-% ---
-% Configurações de aparência do PDF final
-
-% alterando o aspecto da cor azul
-\definecolor{blue}{RGB}{6,69,173} %padrão wikipedia de cor de link
-
-% informações do PDF
-\makeatletter
-\hypersetup{
-     	%pagebackref=true,
-		pdftitle={\@title}, 
-		pdfauthor={\@author},
-    	pdfsubject={\imprimirpreambulo},
-	    pdfcreator={LaTeX with abnTeX2},
-		pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico}, 
-		colorlinks=true,       		% false: boxed links; true: colored links
-    	linkcolor=blue,          	% color of internal links
-    	citecolor=blue,        		% color of links to bibliography
-    	filecolor=magenta,      		% color of file links
-		urlcolor=blue,
-		bookmarksdepth=4
-}
-\makeatother
-% --- 
-
-% ---
-% compila o indice
-% ---
-\makeindex
-% ---
-
-% ----
-% Início do documento
-% ----
-\begin{document}
-% Retira espaço extra obsoleto entre as frases.
-\frenchspacing 
-
-% ----------------------------------------------------------
-% ELEMENTOS PRÉ-TEXTUAIS
-% ----------------------------------------------------------
-\pretextual
-
-% ---
-% Capa
-% ---
-\imprimircapa
-% ---
-
-% ---
-% Folha de rosto
-% (o * indica que haverá a ficha bibliográfica)
-% ---
-\imprimirfolhaderosto*
-% ---
-
-%\clearpage
-\imprimirfichacatalografica
-
-% ---
-% Inserir folha de aprovação
-% ---
-
-% Isto é um exemplo de Folha de aprovação, elemento obrigatório da NBR
-% 14724/2011 (seção 4.2.1.3). Você pode utilizar este modelo até a aprovação
-% do trabalho. Após isso, substitua todo o conteúdo deste arquivo por uma
-% imagem da página assinada pela banca com o comando abaixo:
-%
-% \includepdf{folhadeaprovacao_final.pdf}
-%
-\begin{folhadeaprovacao}
-
-  \begin{center}
-    {\imprimirautor}
-
-    \vspace*{\fill}\vspace*{\fill}
-    \begin{center}
-      \ABNTEXchapterfont\bfseries\Large\imprimirtitulo
-    \end{center}
-    \vspace*{\fill}
-    
-    %\hspace{.45\textwidth}
-    
-    	\begin{center}
-    		\vspace*{0.5cm}
-    		Esta Monografia foi julgada no contexto da disciplina EEL7890 -- Trabalho de Conclusão de Curso (TCC), e aprovado em sua forma final pelo Programa de Engenharia Elétrica da Universidade Federal de Santa Catarina.
-    		\vspace*{0.5cm}
-  		\end{center}
-    
-    \vspace*{\fill}
-   \end{center}
-  
-  \begin{center}
-    %\vspace*{0.5cm}
-    {\large\imprimirlocal},
-    {\large\imprimirdata}
-    %\vspace*{1cm}
-  \end{center}
-        
-   \assinatura{\textbf{ Prof. Dr. Eng. Renato Lucas Pacheco} \\ Coordenador de Graduação}
-   Banca Examinadora:
-   \assinatura{\textbf{Prof. Dr. Eng. \imprimirorientador} \\ Orientador} 
-   \assinatura{\textbf{Professor} \\ Convidado 1}
-   \assinatura{\textbf{Professor} \\ Convidado 2}
-   %\assinatura{\textbf{Professor} \\ Convidado 3}
-   %\assinatura{\textbf{Professor} \\ Convidado 4}
-      
-
-\end{folhadeaprovacao}
-% ---
-
-% ---
-% Dedicatória
-% ---
-\begin{dedicatoria}
-   \vspace*{\fill}
-   \centering
-   \noindent
-   \textit{Este trabalho é dedicado à minha família que foram tão compreensíveis e me deram tanto apoio nos momentos difíceis da jornada da graduação} \vspace*{\fill}
-\end{dedicatoria}
-% ---
-
-% ---
-% Agradecimentos
-% ---
-\begin{agradecimentos}
-\lipsum[1]
-\end{agradecimentos}
-% ---
-
-% ---
-% Epígrafe
-% ---
-\begin{epigrafe}
-    \vspace*{\fill}
-		\noindent
-		\hangindent=5cm \\
-  \textit{`` O homem disse que tinha de ir embora -- antes queria me ensinar uma coisa muito importante: -- Você quer conhecer o segredo de ser um menino feliz para o resto da sua vida? \\ -- Quero -- Respondi. \\ O segredo se resume em três palavras, que ele pronunciou com intensidade, mãos nos meus ombros e olhos nos meus olhos: \\ -- Pense nos outros.''}
-    \begin{flushright}
-		Fernando Sabino	
-		\end{flushright}		
-\end{epigrafe}
-% ---
-
-% ---
-% RESUMOS
-% ---
-
-% resumo em português
-%\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
-%\begin{resumo}
-%Aqui vai o resumo
-
-% \textbf{Palavras-chaves}: latex. abntex. editoração de texto.
-%\end{resumo}
-
-% resumo em inglês
-%\begin{resumo}[Abstract]
-% \begin{otherlanguage*}{english}
-%   This is the english abstract.
-
-%   \vspace{\onelineskip}
- 
-%   \noindent 
-%   \textbf{Key-words}: latex. abntex. text editoration.
-% \end{otherlanguage*}
-%\end{resumo}
+	% ---
+	% Informações de dados para CAPA e FOLHA DE ROSTO
+	% ---
+	\titulo{Repotencialização em Subestações de Alta Tensão Utilizando Módulos de Manobra Híbridos Compactos}
+	\autor{Joan Francisco {}Alvarez Burgos}
+	\local{Florianópolios, SC-Brasil}
+	\data{\today}
+	\orientador{Maurício Valencia {}Ferreira da Luz}
+	%\coorientador{Equipe \abnTeX}
+	%\instituicao{
+	%  Universidade Federal de Santa Catarina -- UFSC
+	%  \par
+	%  Centro Tecnológico -- CTC
+	%  \par
+	%  Departamento de Engenharia Elétrica -- EEL}
+	\instituicao{Universidade Federal de Santa Catarina}
+	\centro{Centro Tecnológico -- CTC}
+	\programa{Programa de Graduação em Engenharia Elétrica}
+	\assuntos{Subestações,Sistemas de Potência,Instalações Elétricas,Orçamentos}
+	\tipotrabalho{Trabalho de Conclusão de Curso}
+	% O preambulo deve conter o tipo do trabalho, o objetivo, 
+	% o nome da instituição e a área de concentração 
+	\preambulo{Monografia submetida ao Programa de Graduação em Engenharia Elétrica da Universidade Federal de Santa Catarina como requisito para aprovação na disciplina EEL7890 -- Trabalho de Conclusão de Curso (TCC).}
+	% ---
 
 
-% ---
-% inserir lista de ilustrações
-% ---
-%\pdfbookmark[0]{\listfigurename}{lof}
-\listoffigures
-\cleardoublepage
-% ---
+	% ---
+	% Configurações de aparência do PDF final
 
-% ---
-% inserir lista de tabelas
-% ---
-%\pdfbookmark[0]{\listtablename}{lot}
-\listoftables*
-\cleardoublepage
-% ---
+	% alterando o aspecto da cor azul
+	\definecolor{blue}{RGB}{6,69,173} %padrão wikipedia de cor de link
 
-% ---
-% inserir lista de abreviaturas e siglas
-% ---
-\begin{siglas}
-  \item[Celesc] Centrais Elétricas de Santa Catarina
-  \item[SE] Subestação
-  \item[CBU] Camboriú
-  \item[CMB] Camboriú Morro do Boi
-\end{siglas}
-% ---
+	% informações do PDF
+	\makeatletter
+	\hypersetup{
+	     	%pagebackref=true,
+			pdftitle={\@title}, 
+			pdfauthor={\@author},
+	    	pdfsubject={\imprimirpreambulo},
+		    pdfcreator={LaTeX with abnTeX2},
+			pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico}, 
+			colorlinks=true,       		% false: boxed links; true: colored links
+	    	linkcolor=blue,          	% color of internal links
+	    	citecolor=blue,        		% color of links to bibliography
+	    	filecolor=magenta,      		% color of file links
+			urlcolor=blue,
+			bookmarksdepth=4
+	}
+	\makeatother
+	% --- 
 
-% ---
-% inserir lista de símbolos
-% ---
-\begin{simbolos}
-  \item[$ \Omega $] Letra grega Ômega
-  \item[$ \Delta $] Letra grega Delta
-\end{simbolos}
+	% ---
+	% compila o indice
+	% ---
+	\makeindex
+	% ---
 
-% ---
-% inserir o sumario
-% ---
-\pdfbookmark[0]{\contentsname}{toc}
-\tableofcontents*
-\cleardoublepage
-% ---
+	% ----
+	% Início do documento
+	% ----
+	\begin{document}
+	% Retira espaço extra obsoleto entre as frases.
+	\frenchspacing 
+
+	% ----------------------------------------------------------
+	% ELEMENTOS PRÉ-TEXTUAIS
+	% ----------------------------------------------------------
+	\pretextual
+
+	% ---
+	% Capa
+	% ---
+	\imprimircapa
+	% ---
+
+	% ---
+	% Folha de rosto
+	% (o * indica que haverá a ficha bibliográfica)
+	% ---
+	\imprimirfolhaderosto*
+	% ---
+
+	%\clearpage
+	\imprimirfichacatalografica
+
+	% ---
+	% Inserir folha de aprovação
+	% ---
+
+	% Isto é um exemplo de Folha de aprovação, elemento obrigatório da NBR
+	% 14724/2011 (seção 4.2.1.3). Você pode utilizar este modelo até a aprovação
+	% do trabalho. Após isso, substitua todo o conteúdo deste arquivo por uma
+	% imagem da página assinada pela banca com o comando abaixo:
+	%
+	% \includepdf{folhadeaprovacao_final.pdf}
+	%
+	\begin{folhadeaprovacao}
+
+	  \begin{center}
+	    {\imprimirautor}
+
+	    \vspace*{\fill}\vspace*{\fill}
+	    \begin{center}
+	      \ABNTEXchapterfont\bfseries\Large\imprimirtitulo
+	    \end{center}
+	    \vspace*{\fill}
+	    
+	    %\hspace{.45\textwidth}
+	    
+	    	\begin{center}
+	    		\vspace*{0.5cm}
+	    		Esta Monografia foi julgada no contexto da disciplina EEL7890 -- Trabalho de Conclusão de Curso (TCC), e aprovado em sua forma final pelo Programa de Engenharia Elétrica da Universidade Federal de Santa Catarina.
+	    		\vspace*{0.5cm}
+	  		\end{center}
+	    
+	    \vspace*{\fill}
+	   \end{center}
+	  
+	  \begin{center}
+	    %\vspace*{0.5cm}
+	    {\large\imprimirlocal},
+	    {\large\imprimirdata}
+	    %\vspace*{1cm}
+	  \end{center}
+	        
+	   \assinatura{\textbf{ Prof. Dr. Eng. Renato Lucas Pacheco} \\ Coordenador de Graduação}
+	   Banca Examinadora:
+	   \assinatura{\textbf{Prof. Dr. Eng. \imprimirorientador} \\ Orientador} 
+	   \assinatura{\textbf{Professor} \\ Convidado 1}
+	   \assinatura{\textbf{Professor} \\ Convidado 2}
+	   %\assinatura{\textbf{Professor} \\ Convidado 3}
+	   %\assinatura{\textbf{Professor} \\ Convidado 4}
+	      
+
+	\end{folhadeaprovacao}
+	% ---
+
+	% ---
+	% Dedicatória
+	% ---
+	\begin{dedicatoria}
+	   \vspace*{\fill}
+	   \centering
+	   \noindent
+	   \textit{Este trabalho é dedicado à minha família que foram tão compreensíveis e me deram tanto apoio nos momentos difíceis da jornada da graduação} \vspace*{\fill}
+	\end{dedicatoria}
+	% ---
+
+	% ---
+	% Agradecimentos
+	% ---
+	\begin{agradecimentos}
+	\lipsum[1]
+	\end{agradecimentos}
+	% ---
+
+	% ---
+	% Epígrafe
+	% ---
+	\begin{epigrafe}
+	    \vspace*{\fill}
+			\noindent
+			\hangindent=5cm \\
+	  \textit{`` O homem disse que tinha de ir embora -- antes queria me ensinar uma coisa muito importante: -- Você quer conhecer o segredo de ser um menino feliz para o resto da sua vida? \\ -- Quero -- Respondi. \\ O segredo se resume em três palavras, que ele pronunciou com intensidade, mãos nos meus ombros e olhos nos meus olhos: \\ -- Pense nos outros.''}
+	    \begin{flushright}
+			Fernando Sabino	
+			\end{flushright}		
+	\end{epigrafe}
+	% ---
+
+	% ---
+	% RESUMOS
+	% ---
+
+	% resumo em português
+	%\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+	%\begin{resumo}
+	%Aqui vai o resumo
+
+	% \textbf{Palavras-chaves}: latex. abntex. editoração de texto.
+	%\end{resumo}
+
+	% resumo em inglês
+	%\begin{resumo}[Abstract]
+	% \begin{otherlanguage*}{english}
+	%   This is the english abstract.
+
+	%   \vspace{\onelineskip}
+	 
+	%   \noindent 
+	%   \textbf{Key-words}: latex. abntex. text editoration.
+	% \end{otherlanguage*}
+	%\end{resumo}
+
+
+	% ---
+	% inserir lista de ilustrações
+	% ---
+	%\pdfbookmark[0]{\listfigurename}{lof}
+	\listoffigures
+	\cleardoublepage
+	% ---
+
+	% ---
+	% inserir lista de tabelas
+	% ---
+	%\pdfbookmark[0]{\listtablename}{lot}
+	\listoftables*
+	\cleardoublepage
+	% ---
+
+	% ---
+	% inserir lista de abreviaturas e siglas
+	% ---
+	\begin{siglas}
+	  \item[Celesc] Centrais Elétricas de Santa Catarina
+	  \item[SE] Subestação
+	  \item[CBU] Camboriú
+	  \item[CMB] Camboriú Morro do Boi
+	\end{siglas}
+	% ---
+
+	% ---
+	% inserir lista de símbolos
+	% ---
+	\begin{simbolos}
+	  \item[$ \Omega $] Letra grega Ômega
+	  \item[$ \Delta $] Letra grega Delta
+	\end{simbolos}
+
+	% ---
+	% inserir o sumario
+	% ---
+	\pdfbookmark[0]{\contentsname}{toc}
+	\tableofcontents*
+	\cleardoublepage
+	% ---
+%fim dos elementros Pré Textuais
+
 
 % ----------------------------------------------------------
 % ELEMENTOS TEXTUAIS
@@ -291,9 +295,8 @@
 % ----------------------------------------------------------
 % Introdução
 % ----------------------------------------------------------
-%\chapter*[Introdução]{Introdução} %o asterisco exclui a numeração e retira do sumário
+\chapter[Introdução]{Introdução} %o asterisco exclui a numeração e retira do sumário
 %\addcontentsline{toc}{chapter}{Introdução} %este volta a adicionar ao sumário a introdução
-\chapter{Introdução}
 	O estudo de caso consiste na ampliação da Subestação Camboriú de responsabilidade das Centrais Elétricas de Santa Catarina – Celesc que opera em plena carga de 30MVA segundo dados do Centro de Operação do Sistema Elétrico da Celesc desde final de 2013.
 
 	\section{Motivação}
@@ -360,6 +363,94 @@
 		  }
 		% \legend{Fonte: Do autor}
 		\end{figure}\par
+
+		\subsection{Características construtivas}
+			A seguir apresenta-se as diferentes formas para diferentes usos do TC.
+
+			\subsubsection{Formas Construtivas}
+				\paragraph*{a)\indent TC tipo barra}
+					É aquele cujo enrolamento é constituído por uma barra fixada através do núcleo do transformador, conforme mostrado na \autoref{fig:tca}.
+					\begin{figure}[htb]
+						\caption{TC tipo barra}
+						\centering
+						\includegraphics[width=5.4cm]{TC(1).png}
+						% \legend{Fonte: Do autor}
+						\label{fig:tca}
+					\end{figure}
+				\paragraph*{b)\indent TC tipo enrolado}
+					É aquele cujo enrolamento é constituído de uma ou mais espiras envolvendo o núcleo do transformador, confomre ilustrado na \autoref{fig:tcb}.
+					\begin{figure}[htb]
+						\caption{TC tipo enrolado}
+						\centering
+						\includegraphics[width=5.4cm]{TC(2).png}
+						% \legend{Fonte: Do autor}
+						\label{fig:tcb}
+					\end{figure}
+				\paragraph*{c)\indent TC tipo janela}
+					É aquele que não possui o primário fixo no transformador e é constituído de uma abertura através do núcleo, por onde passa o condutor que forma o circuito primário, conforme apresenta na \autoref{fig:tcc}.
+					\begin{figure}[htb]
+						\caption{TC tipo janela}
+						\centering
+						\includegraphics[width=5.4cm]{TC(3).png}
+						% \legend{Fonte: Do autor}
+						\label{fig:tcc}
+					\end{figure}
+				\paragraph*{d)\indent TC tipo bucha}
+					É aquele cuja características são semelhantes às do tc do tipo barra, porém sua instalação é feita na bucha dos equipamentos, que funcionan como enrolamento primário, de acordo com a \autoref{fig:tcd}.
+					\begin{figure}[htb]
+						\caption{TC tipo bucha}
+						\centering
+						\includegraphics[width=5.4cm]{TC(4).png}
+						% \legend{Fonte: Do autor}
+						\label{fig:tcd}
+					\end{figure}
+				\paragraph*{e)\indent TC tipo núcleo dividido}
+					É aquele cujas características são semelhantes às do tipo janela, em que o núcleo pode ser separado para permitir envolver o condutor que funciona como enrolamento primário, conforme se mostra na \autoref{fig:tce}.
+					\begin{figure}[htb]
+						\caption{TC tipo núcleo dividido}
+						\centering
+						\includegraphics[width=5.4cm]{TC(5).png}
+						% \legend{Fonte: Do autor}
+						\label{fig:tce}
+					\end{figure}
+				\paragraph*{f)\indent TC tipo vários enrolamentos primários}
+					É aquele constituído de vários enrolamentos primários montados isoladamente e apenas um enrolamento secundário, conforme a \autoref{fig:tcf}.
+					\begin{figure}[htb]
+						\caption{TC tipo vários enrolamentos primários}
+						\centering
+						\includegraphics[width=5.4cm]{TC(6).png}
+						% \legend{Fonte: Do autor}
+						\label{fig:tcf}
+					\end{figure}
+				\paragraph*{g)\indent TC tipo vários núcleos secundários}
+					É aquele constituído de dois o mais núcleos ssecundários montados isoladamente formando com o enrolamento primário, um só conjunto, conforme se mostra na \autoref{fig:tcg}.
+					\begin{figure}[htb]
+						\caption{TC tipo vários núcleos secundários}
+						\centering
+						\includegraphics[width=5.4cm]{TC(7).png}
+						% \legend{Fonte: Do autor}
+						\label{fig:tcg}
+					\end{figure}
+				\paragraph*{h)\indent TC tipo vários enrolamentos secundários}
+					É aquele constituído de um núcleo envolvido pelo enrolamento primário e vários enrolamentos secundários, conforme se mostra na \autoref{fig:tch}, e que podem ser ligados em série ou paralelo.
+					\begin{figure}[htb]
+						\caption{TC tipo vários enrolamentos secundários}
+						\centering
+						\includegraphics[width=5.4cm]{TC(8).png}
+						% \legend{Fonte: Do autor}
+						\label{fig:tch}
+					\end{figure}
+				\paragraph*{i)\indent TC tipo derivação no secundário}
+					\begin{figure}[htb]
+						\caption{TC tipo derivação no secundário}
+						\centering
+						\includegraphics[width=5.4cm]{TC(9).png}
+						% \legend{Fonte: Do autor}
+						\label{fig:tci}
+					\end{figure}
+				\paragraph*{j)\indent TC de barra do tipo relação múltiplas com primário em várias seções}
+			\subsubsection{Tipos de isolamento}
+
 		O ponto, para transformadores com polaridade aditiva, indica onde entra a corrente no primário e onde sai a corrente no secundário (defasagem de 180º). Modelos industriais de TC’s têm os terminais de alta tensão marcados como P1 e P2 (Primário 1 e Primário 2), sendo que em muitos casos pode haver diferentes ligações do circuito primário que permitam alterar a relação de transformação. Os terminais secundários são marcados como 1s1, 1s2, 2s2 (número, algarismo, número), indicando respectivamente o número do enrolamento, o símbolo de terminal secundário (s) e o número da derivação do terminal secundário.\par
 		\begin{figure}[htb]
 		  \caption{Placa de identificação de um TC utilizado no barramento de 138 kV}
@@ -434,30 +525,30 @@
 		\end{itemize}\par
 		As características de disparo do disjuntor são fornecidas pelos fabricantes através de duas informações principais: corrente nominal e curva de disparo. Outras características são importantes para o dimensionamento, tais como: tensão nominal, corrente máxima de interrupção do disjuntor e número de polos (unipolar, bipolar ou tri-polar).\par
 
-	\subsection{Disjuntor de alta tensão}
-		Para a interrupção de altas correntes, especialmente na presença de circuitos indutivos, são necessários mecanismos especiais para a interrupção do arco voltaico (ou arco elétrico), resultante na abertura dos polos. Para aplicações de grande potência, esta corrente de curto-circuito, pode alcançar valores de 100kA. Após a interrupção, o disjuntor deve isolar e resistir às tensões do sistema. Por fim, o disjuntor deve atuar quando comandado, ou seja, deve haver um alto grau de confiabilidade.\par
+		\subsection{Disjuntor de alta tensão}
+			Para a interrupção de altas correntes, especialmente na presença de circuitos indutivos, são necessários mecanismos especiais para a interrupção do arco voltaico (ou arco elétrico), resultante na abertura dos polos. Para aplicações de grande potência, esta corrente de curto-circuito, pode alcançar valores de 100kA. Após a interrupção, o disjuntor deve isolar e resistir às tensões do sistema. Por fim, o disjuntor deve atuar quando comandado, ou seja, deve haver um alto grau de confiabilidade.\par
 
-		\begin{figure}[htb]
-		  \caption{Disjuntor Siemens a SF6 modelo 3AP1 FG junto a sua placa de identificação}
-		  \centering
-		  \subfloat[Disjuntor de Potência] {
-		  \includegraphics[width=5.5cm]{disjuntor.pdf}
-		  \label{fig:disjuntor}
-		  }
-		  \subfloat[Placa de identificação] {
-		  \includegraphics[width=5cm]{placadisjuntor.jpg}
-		  }
-		% \legend{Fonte: Do autor}
-		\end{figure}\par
+			\begin{figure}[htb]
+			  \caption{Disjuntor Siemens a SF6 modelo 3AP1 FG junto a sua placa de identificação}
+			  \centering
+			  \subfloat[Disjuntor de Potência] {
+			  \includegraphics[width=5.5cm]{disjuntor.pdf}
+			  \label{fig:disjuntor}
+			  }
+			  \subfloat[Placa de identificação] {
+			  \includegraphics[width=5cm]{placadisjuntor.jpg}
+			  }
+			% \legend{Fonte: Do autor}
+			\end{figure}\par
 
-		Alguns tipos de disjuntores de alta potência:\par
-		\begin{itemize}
-		\item Disjuntor a grande volume de óleo;
-		\item Disjuntor a pequeno volume de óleo;
-		\item Disjuntor a ar comprimido;
-		\item Disjuntor a vácuo;
-		\item Disjuntor a hexafluoreto de enxofre (SF6); 
-		\end{itemize}
+			Alguns tipos de disjuntores de alta potência:\par
+			\begin{itemize}
+			\item Disjuntor a grande volume de óleo;
+			\item Disjuntor a pequeno volume de óleo;
+			\item Disjuntor a ar comprimido;
+			\item Disjuntor a vácuo;
+			\item Disjuntor a hexafluoreto de enxofre (SF6); 
+			\end{itemize}
 
 	\section{Transformador de Potência}
 		A invenção do transformador de potência, que remonta o fim do século XIX, tornou-se possível o desenvolvimento do moderno sistema de alimentação em corrente alternada, com subestações de potência freqüentemente localizadas a muitos quilômetros dos centros de consumo (carga). Antes disto, nos primórdios do suprimento de eletricidade pública, estes eram sistemas de corrente contínua, com a fonte de geração, por necessidade, localizados próximo do local de consumo.\par
@@ -799,7 +890,7 @@
 
 \chapter{Projeto de subestações de alta tensão}
 \label{chap:projSEAT}
-\lipsum
+	\lipsum
 
 % ---------------------------------------------------
 % Capítulo 3
@@ -807,7 +898,7 @@
 
 \chapter{Problemática da Demanda de Carga da Subestação Camboriú (CBU) -- SC}
 \label{chap:demCarga}
-\lipsum
+	\lipsum
 
 % ---------------------------------------------------
 % Capítulo 4
@@ -815,7 +906,7 @@
 
 \chapter{Solução de Ampliação para a Subestação Camboriú}
 \label{chap:solAmp}
-\lipsum
+	\lipsum
 
 % ---------------------------------------------------
 % Capítulo 5
@@ -823,7 +914,7 @@
 
 \chapter{Como é feito em outras partes do mundo}
 \label{chap:asbuiltAbroad}
-\lipsum
+	\lipsum
 
 
 % ---------------------------------------------------
@@ -831,7 +922,7 @@
 % ---------------------------------------------------
 \chapter*[Conclusão]{Conclusão}
 \addcontentsline{toc}{chapter}{Conclusão}
-\lipsum
+	\lipsum
 
 
 \bibliography{refs}
