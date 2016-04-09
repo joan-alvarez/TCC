@@ -18,7 +18,7 @@
 	\usepackage{subfig}  % usar subfloat duas figuras na mesma figura
 	\newcommand{\subfigureautorefname}{\figureautorefname} % fez funcionar o auto ref nas subfiguras
 
-	%\renewcommand\theparagraph{\alph{paragraph})} %fazer o \paragraph virar uma subsubsubsection enumerada por letra (a,b,c)
+	\renewcommand\theparagraph{\alph{paragraph})} %fazer o \paragraph virar uma subsubsubsection enumerada por letra (a,b,c)
 
 	\usepackage{microtype} 			% para melhorias de justificação
 	\usepackage{mathtools} %para usar equations
@@ -296,7 +296,7 @@
 % Introdução
 % ----------------------------------------------------------
 \chapter[Introdução]{Introdução} %o asterisco exclui a numeração e retira do sumário
-%\addcontentsline{toc}{chapter}{Introdução} %este volta a adicionar ao sumário a introdução
+	%\addcontentsline{toc}{chapter}{Introdução} %este volta a adicionar ao sumário a introdução
 	O estudo de caso consiste na ampliação da Subestação Camboriú de responsabilidade das Centrais Elétricas de Santa Catarina – Celesc que opera em plena carga de 30MVA segundo dados do Centro de Operação do Sistema Elétrico da Celesc desde final de 2013.
 
 	\section{Motivação}
@@ -441,6 +441,7 @@
 						\label{fig:tch}
 					\end{figure}
 				\paragraph*{i)\indent TC tipo derivação no secundário}
+					É aquele constituído de um único núcleo envolvido pelo enrolamentos primário e secundário, sendo este promovido de uma ou mais derivações. Entretanto, o primário pode ser constituído de um ou mais enrolamentos, conforme se mostra na \autoref{fig:tcf}. Como os ampères-espiras variam em cada relação de transformadores considerada, somente é garantida a classe de  exatidão do equipamento para a derivação que contiver o maior número de espiras. A versão desse tipo de TC é apresentado na \autoref{fig:tci}.  
 					\begin{figure}[htb]
 						\caption{TC tipo derivação no secundário}
 						\centering
@@ -449,7 +450,14 @@
 						\label{fig:tci}
 					\end{figure}
 				\paragraph*{j)\indent TC de barra do tipo relação múltiplas com primário em várias seções}
+					É aquele constituído de múltiplas barras no primário que podem ser ligadas em série-paralelo formando múltiplas relações.
+			
 			\subsubsection{Tipos de isolamento}
+				\paragraph*{a)\indent TCs de baixa tensão}
+					Os núcleo e os enrolamentos são encapsulados em resina epóxi que os torna rígidos, tornando-os compactos com características eletromecânicas de grande desempenho. Porém o epóxi tem a desvantagem de ser descartável depois de uma falha interna não sendo possível sua recuperação.
+				\paragraph*{b)\indent TCs de média e alta tensão}
+					Para a média tensão o isolamento pode ser em resinas sintéticas e a óleo mineral isolante, geralmente imerso num tanque metálico cheio de óleo. Agora os terminais constituídos por isoladores de porcelana.\par
+					Para a alta tensão é usado porcelana-óleo e a hexafluoreto de enxofre ($F_6$).\par
 
 		O ponto, para transformadores com polaridade aditiva, indica onde entra a corrente no primário e onde sai a corrente no secundário (defasagem de 180º). Modelos industriais de TC’s têm os terminais de alta tensão marcados como P1 e P2 (Primário 1 e Primário 2), sendo que em muitos casos pode haver diferentes ligações do circuito primário que permitam alterar a relação de transformação. Os terminais secundários são marcados como 1s1, 1s2, 2s2 (número, algarismo, número), indicando respectivamente o número do enrolamento, o símbolo de terminal secundário (s) e o número da derivação do terminal secundário.\par
 		\begin{figure}[htb]
