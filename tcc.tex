@@ -18,7 +18,7 @@
 	\usepackage{subfig}  % usar subfloat duas figuras na mesma figura
 	\newcommand{\subfigureautorefname}{\figureautorefname} % fez funcionar o auto ref nas subfiguras
 
-	\renewcommand\theparagraph{\alph{paragraph})} %fazer o \paragraph virar uma subsubsubsection enumerada por letra (a,b,c)
+	%\renewcommand\theparagraph{\alph{paragraph})} %fazer o \paragraph virar uma subsubsubsection enumerada por letra (a,b,c)
 
 	\usepackage{microtype} 			% para melhorias de justificação
 	\usepackage{mathtools} %para usar equations
@@ -30,6 +30,8 @@
 
 	\usepackage{longtable}
 	\usepackage{tabularx}
+
+	\usepackage[framemethod=tikz]{mdframed} %destaque de prágrafos
 
 	\graphicspath{{figuras/}}
 	% ---
@@ -199,7 +201,9 @@
 	% Agradecimentos
 	% ---
 	\begin{agradecimentos}
+	\begin{mdframed}[hidealllines=true,backgroundcolor=blue!20]
 	\lipsum[1]
+	\end{mdframed}
 	\end{agradecimentos}
 	% ---
 
@@ -245,7 +249,7 @@
 	% ---
 	% inserir lista de ilustrações
 	% ---
-	%\pdfbookmark[0]{\listfigurename}{lof}
+	\pdfbookmark[0]{\listfigurename}{lof}
 	\listoffigures
 	\cleardoublepage
 	% ---
@@ -253,7 +257,7 @@
 	% ---
 	% inserir lista de tabelas
 	% ---
-	%\pdfbookmark[0]{\listtablename}{lot}
+	\pdfbookmark[0]{\listtablename}{lot}
 	\listoftables*
 	\cleardoublepage
 	% ---
@@ -331,17 +335,17 @@
 		Estes são construídos por meio da escolha de dos materiais: o carbonato de silício (SiC) ou óxido de zinco (ZnO). 
 
 		\begin{figure}[htb]
-		  \caption{Para-raios e sua placa de identificação}
-		  \centering
-		  \subfloat[Para-raio de Potência] {
-		  \includegraphics[width=2.7cm]{pararaio.pdf}
-		  \label{fig:pararaioA}
-		  }
-		  \subfloat[Placa de identificação] {
-		  \includegraphics[width=8cm]{pararaio.jpg}
-		  \label{fig:pararaioB}
-		  }
-		% \legend{Fonte: Do autor}
+			\caption{Para-raios e sua placa de identificação}
+			\centering
+			\subfloat[Para-raio de Potência] {
+			\includegraphics[width=2.7cm]{pararaio.pdf}
+			\label{fig:pararaioA}
+			}
+			\subfloat[Placa de identificação] {
+			\includegraphics[width=8cm]{pararaio.jpg}
+			\label{fig:pararaioB}
+			}
+			% \legend{Fonte: Do autor}
 		\end{figure}
 
 	\section{Muflas e Terminações}
@@ -349,20 +353,7 @@
 	\section{Condutores}
 
 	\section{Transformador de Corrente (TC)}
-		Um transformador de corrente ou simplesmente TC é um dispositivo que reproduz no seu circuito secundário, a corrente que circula em um enrolamento primário com sua posição vetorial substancialmente mantida, em uma proporção definida, conhecida e adequada. Os transformadores de corrente, também chamados de transformadores de instrumentos, utilizados em aplicações de alta tensão (situações essas onde circulam, frequentemente, altas correntes), fornecem correntes suficientemente reduzidas e isoladas do circuito primário de forma a possibilitar o seu uso por equipamentos de medição, controle e proteção. A simbologia padrão dos transformadores de corrente mostra os terminais primários de alta tensão H1 e H2 e os terminais secundários X1 e X2, como visto na \autoref{fig:tca}.
-
-		\begin{figure}[htb]
-		  \caption{Simbologia e circuito equivalente simplificado do TC}
-		  \label{fig:tca}
-		  \centering
-		  \subfloat {
-		  \includegraphics[width=5cm]{tca.jpg}
-		  }
-		  \subfloat {
-		  \includegraphics[width=5.8cm]{tcb.jpg}
-		  }
-		% \legend{Fonte: Do autor}
-		\end{figure}\par
+		Um transformador de corrente ou simplesmente TC é um dispositivo que reproduz no seu circuito secundário, a corrente que circula em um enrolamento primário com sua posição vetorial substancialmente mantida, em uma proporção definida, conhecida e adequada. Os transformadores de corrente, também chamados de transformadores de instrumentos, utilizados em aplicações de alta tensão (situações essas onde circulam, frequentemente, altas correntes), fornecem correntes suficientemente reduzidas e isoladas do circuito primário de forma a possibilitar o seu uso por equipamentos de medição, controle e proteção.
 
 		\subsection{Características construtivas}
 			A seguir apresenta-se as diferentes formas para diferentes usos do TC.
@@ -459,23 +450,48 @@
 					Para a média tensão o isolamento pode ser em resinas sintéticas e a óleo mineral isolante, geralmente imerso num tanque metálico cheio de óleo. Agora os terminais constituídos por isoladores de porcelana.\par
 					Para a alta tensão é usado porcelana-óleo e a hexafluoreto de enxofre ($F_6$).\par
 
-		O ponto, para transformadores com polaridade aditiva, indica onde entra a corrente no primário e onde sai a corrente no secundário (defasagem de 180º). Modelos industriais de TC’s têm os terminais de alta tensão marcados como P1 e P2 (Primário 1 e Primário 2), sendo que em muitos casos pode haver diferentes ligações do circuito primário que permitam alterar a relação de transformação. Os terminais secundários são marcados como 1s1, 1s2, 2s2 (número, algarismo, número), indicando respectivamente o número do enrolamento, o símbolo de terminal secundário (s) e o número da derivação do terminal secundário.\par
-		\begin{figure}[htb]
-		  \caption{Placa de identificação de um TC utilizado no barramento de 138 kV}
-		  \centering
-		  \includegraphics[width=10.8cm]{placatc.jpg}
-		% \legend{Fonte: Do autor}
-		  \label{fig:placatc}
-		\end{figure}
+		\subsection{Características Elétricas}
+			A simbologia padrão dos transformadores de corrente mostra os terminais primários de alta tensão H1 e H2 e os terminais secundários X1 e X2, como visto na \autoref{fig:tc1}.
 
-		O circuito equivalente aproximado para um transformador de corrente é mostrado na Figura 10, onde a transformação da corrente entre os circuitos primário e secundário é feita sem perdas. A impedância de dispersão do primário Z1 é multiplicada pelo quadrado da relação $N^{2}$ quando referida ao secundário. A impedância de dispersão secundária é Z2. Os componentes de perdas no núcleo por correntes parasitas e por magnetização são dados por Zm e a impedância de carga é dada por Zc. Este circuito generalizado pode ser simplificado como mostrado no esquema ao lado. A impedância primária Z1 pode ser desprezada, uma vez que o reduzido número de espiras no primário (o que é verdadeiro para a maioria dos TC’s comerciais) tem pequena resistência e pouca dispersão. A corrente através do ramo magnetizante Xm é Im, chamada corrente de excitação. A corrente de excitação é atrasada de 90º em relação a V1'.\par
-		\begin{figure}[htb]
-		  \caption{Foto de um Transformador de Corrente}
-		  \centering
-		  \includegraphics[width=3cm]{fototc.pdf}
-		% \legend{Fonte: Do autor}
-		  \label{fig:fototc}
-		\end{figure}
+			\begin{figure}[htb]
+				\caption{Simbologia e circuito equivalente simplificado do TC}
+				\centering
+				\subfloat [Simbologia]{
+				\includegraphics[width=5cm]{tca.jpg}
+				\label{fig:tc1}
+				}
+				\subfloat [Circuito equivalente]{
+				\includegraphics[width=5.8cm]{tcb.jpg}
+				\label{fig:tc2}
+				}
+				% \legend{Fonte: Do autor}
+			\end{figure}
+			
+			O ponto, para transformadores com polaridade aditiva, indica onde entra a corrente no primário e onde sai a corrente no secundário (defasagem de 180º). Modelos industriais de TC’s têm os terminais de alta tensão marcados como P1 e P2 (Primário 1 e Primário 2), sendo que em muitos casos pode haver diferentes ligações do circuito primário que permitam alterar a relação de transformação. Os terminais secundários são marcados como 1s1, 1s2, 2s2 (número, algarismo, número), indicando respectivamente o número do enrolamento, o símbolo de terminal secundário (s) e o número da derivação do terminal secundário.\par
+			\begin{figure}[htb]
+			  \caption{Placa de identificação de um TC utilizado no barramento de 138 kV}
+			  \centering
+			  \includegraphics[width=10.8cm]{placatc.jpg}
+			% \legend{Fonte: Do autor}
+			  \label{fig:placatc}
+			\end{figure}
+
+			O circuito equivalente aproximado para um transformador de corrente é mostrado na Figura 10, onde a transformação da corrente entre os circuitos primário e secundário é feita sem perdas. A impedância de dispersão do primário Z1 é multiplicada pelo quadrado da relação $N^{2}$ quando referida ao secundário. A impedância de dispersão secundária é Z2. Os componentes de perdas no núcleo por correntes parasitas e por magnetização são dados por Zm e a impedância de carga é dada por Zc. Este circuito generalizado pode ser simplificado como mostrado no esquema ao lado. A impedância primária Z1 pode ser desprezada, uma vez que o reduzido número de espiras no primário (o que é verdadeiro para a maioria dos TC’s comerciais) tem pequena resistência e pouca dispersão. A corrente através do ramo magnetizante Xm é Im, chamada corrente de excitação. A corrente de excitação é atrasada de 90º em relação a V1'.\par
+			\begin{figure}[htb]
+			  \caption{Foto de um Transformador de Corrente}
+			  \centering
+			  \includegraphics[width=3cm]{fototc.pdf}
+			% \legend{Fonte: Do autor}
+			  \label{fig:fototc}
+			\end{figure}
+
+		\subsection{Classificação}
+			\subsubsection{TCs para serviço de medição}
+				São os transforadores cuja função é medir, requer reproduzir fielmente a magnitude e o ângulo de fase da corrente, sua precisão deve ser garantida desde uma pequena fração de de corrente nominal da ordem de 10\% até o excesso de corrente da ordem de 20\%, sobre o valor nominal.\cite{apuntesmeza}\par
+
+			\subsubsection{TCs para serviço de proteção}
+				São os transformadores cuja função é proteger um circuito, requer conservar sua fidelidade até um valor de vinte vezes a magnitude de corrente nominal, quando trata-se de grande redes com altas correntes poder ser necessário requerer trinta vezes a corrente nominal.\par
+				No caso dos relés de sobrecorrente, só importa a relação de transformação, mas em outros tipos de relés, como pode ser os de impedância, é requerido além da relação de transformação, manter o erro do ângulo de fase dentro dos valores predeterminados.\cite{apuntesmeza}\par
 
 	\section{Transformador de Potencial (TP)}
 		Transformador de Potencial (TP) é um equipamento usado principalmente para sistemas de medição de tensão elétrica, sendo capaz de reduzir a tensão do circuito para níveis compatíveis com a máxima suportável pelos instrumentos de medição. Sua principal aplicação é na medição de tensões com valores elevados, ou seja, em seu circuito primário é conectada a tensão a ser medida, sendo que no secundário será reproduzida uma tensão reduzida e diretamente proporcional a do primário. Assim, com menor custo e maior segurança, pode-se conectar o instrumento de medição no secundário. A razão entre a tensão no primário sobre a tensão apresentada no secundário de qualquer transformador é uma constante chamada de relação de transformação (RT). A RT é determinada na fabricação do TP pela razão entre o número de espiras do enrolamento primário sobre o número de espiras do enrolamento secundário, assim conhecendo-se a RT e a tensão no circuito secundário, tem-se o valor da tensão no circuito primário. Os TPs podem ser considerados especiais, pois são fabricados de forma a apresentar uma RT com ótima exatidão, ou seja, uma pequena variação na tensão do primário causará uma variação proporcional também no secundário, permitindo assim que indicação no instrumento de medição apresente uma incerteza de medição muito pequena. A tensão reduzida do circuito secundário do TP também é usada para alimentar, de forma igualmente segura, os circuitos de proteção e controle de subestações. Os principais componentes de um TP é mostrado na \autoref{fig:vistatp}.
@@ -891,14 +907,15 @@
 
 
 
-
 % ---------------------------------------------------
 % Capítulo 2
 % ---------------------------------------------------
 
 \chapter{Projeto de subestações de alta tensão}
 \label{chap:projSEAT}
+	\begin{mdframed}[hidealllines=true,backgroundcolor=blue!20]
 	\lipsum
+	\end{mdframed}
 
 % ---------------------------------------------------
 % Capítulo 3
@@ -906,7 +923,9 @@
 
 \chapter{Problemática da Demanda de Carga da Subestação Camboriú (CBU) -- SC}
 \label{chap:demCarga}
+	\begin{mdframed}[hidealllines=true,backgroundcolor=blue!20]
 	\lipsum
+	\end{mdframed}
 
 % ---------------------------------------------------
 % Capítulo 4
@@ -914,7 +933,9 @@
 
 \chapter{Solução de Ampliação para a Subestação Camboriú}
 \label{chap:solAmp}
+	\begin{mdframed}[hidealllines=true,backgroundcolor=blue!20]
 	\lipsum
+	\end{mdframed}
 
 % ---------------------------------------------------
 % Capítulo 5
@@ -922,7 +943,9 @@
 
 \chapter{Como é feito em outras partes do mundo}
 \label{chap:asbuiltAbroad}
+	\begin{mdframed}[hidealllines=true,backgroundcolor=blue!20]
 	\lipsum
+	\end{mdframed}
 
 
 % ---------------------------------------------------
@@ -930,7 +953,9 @@
 % ---------------------------------------------------
 \chapter*[Conclusão]{Conclusão}
 \addcontentsline{toc}{chapter}{Conclusão}
+	\begin{mdframed}[hidealllines=true,backgroundcolor=blue!20]
 	\lipsum
+	\end{mdframed}
 
 
 \bibliography{refs}
