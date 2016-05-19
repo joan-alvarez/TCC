@@ -31,8 +31,6 @@
 	\usepackage{longtable}
 	\usepackage{tabularx}
 
-	\usepackage[framemethod=tikz]{mdframed} %destaque de prágrafos
-
 	\graphicspath{{figuras/}}
 	% ---
 			
@@ -201,9 +199,7 @@
 	% Agradecimentos
 	% ---
 	\begin{agradecimentos}
-	\begin{mdframed}[hidealllines=true,backgroundcolor=blue!20]
-	\lipsum[1]
-	\end{mdframed}
+	\textcolor{red}{\lipsum[1]}
 	\end{agradecimentos}
 	% ---
 
@@ -353,7 +349,7 @@
 	\section{Condutores}
 
 	\section{Transformador de Corrente (TC)}
-		Um transformador de corrente ou simplesmente TC é um dispositivo que reproduz no seu circuito secundário, a corrente que circula em um enrolamento primário com sua posição vetorial substancialmente mantida, em uma proporção definida, conhecida e adequada. Os transformadores de corrente, também chamados de transformadores de instrumentos, utilizados em aplicações de alta tensão (situações essas onde circulam, frequentemente, altas correntes), fornecem correntes suficientemente reduzidas e isoladas do circuito primário de forma a possibilitar o seu uso por equipamentos de medição, controle e proteção.
+		Um transformador de corrente ou simplesmente TC é um dispositivo que reproduz no seu circuito secundário, a corrente que circula em um enrolamento primário com sua posição vetorial substancialmente mantida, em uma proporção definida, conhecida e adequada. Os transformadores de corrente, também chamados de transformadores de instrumentos, utilizados em aplicações de alta tensão (situações essas onde circulam, frequentemente, altas correntes), fornecem correntes suficientemente reduzidas e isoladas do circuito primário de forma a possibilitar o seu uso por equipamentos de medição, controle e proteção.\cite{mamedemanual}
 
 		\subsection{Características construtivas}
 			A seguir apresenta-se as diferentes formas para diferentes usos do TC.
@@ -457,7 +453,7 @@
 				\caption{Simbologia e circuito equivalente simplificado do TC}
 				\centering
 				\subfloat [Simbologia]{
-				\includegraphics[width=5cm]{tca.jpg}
+				\includegraphics[width=3cm]{tca.pdf}
 				\label{fig:tc1}
 				}
 				\subfloat [Circuito equivalente]{
@@ -488,7 +484,7 @@
 		\subsection{Classificação}
 			\subsubsection{TCs para serviço de medição}
 				São os transforadores cuja função é medir, requer reproduzir fielmente a magnitude e o ângulo de fase da corrente, sua precisão deve ser garantida desde uma pequena fração de de corrente nominal da ordem de 10\% até o excesso de corrente da ordem de 20\%, sobre o valor nominal.\cite{apuntesmeza}\par
-				\subsubsubsection{Fator de sobrecorrente}
+			\subsubsubsection{Fator de sobrecorrente}
 				Além de representar uma elevada segurança aos operadores e leituristas, os TCs têm a finalidade de proteger os instrumentos de medida contra sobrecargas ou sobrecorrentes de valores muito elevados. Isto é possível, porque o seu núcleo é especificado para entrar em saturação para correntes superiores à corrente nominal vezes o fator de sobrecorrente, conforme se pode mostrar na \autoref{eq:fsobrecorrente}.
 				\begin{equation} \label{eq:fsobrecorrente}
 					F_{s} = \frac{I_{ps}}{I_{np}}
@@ -525,50 +521,34 @@
 
 \chapter{Projeto de subestações de alta tensão}
 \label{chap:projSEAT}
-	\begin{mdframed}[hidealllines=true,backgroundcolor=blue!20]
-	\lipsum
-	\end{mdframed}
-
+\textcolor{red}{\lipsum}
 % ---------------------------------------------------
 % Capítulo 3
 % ---------------------------------------------------
 
 \chapter{Problemática da Demanda de Carga da Subestação Camboriú (CBU) -- SC}
 \label{chap:demCarga}
-	\begin{mdframed}[hidealllines=true,backgroundcolor=blue!20]
-	\lipsum
-	\end{mdframed}
-
+\textcolor{red}{\lipsum}
 % ---------------------------------------------------
 % Capítulo 4
 % ---------------------------------------------------
 
 \chapter{Solução de Ampliação para a Subestação Camboriú}
 \label{chap:solAmp}
-	\begin{mdframed}[hidealllines=true,backgroundcolor=blue!20]
-	\lipsum
-	\end{mdframed}
-
+\textcolor{red}{\lipsum}
 % ---------------------------------------------------
 % Capítulo 5
 % ---------------------------------------------------
 
 \chapter{Como é feito em outras partes do mundo}
 \label{chap:asbuiltAbroad}
-	\begin{mdframed}[hidealllines=true,backgroundcolor=blue!20]
-	\lipsum
-	\end{mdframed}
-
+\textcolor{red}{\lipsum}
 
 % ---------------------------------------------------
 % Conclusão
 % ---------------------------------------------------
 \chapter*[Conclusão]{Conclusão}
-\addcontentsline{toc}{chapter}{Conclusão}
-	\begin{mdframed}[hidealllines=true,backgroundcolor=blue!20]
-	\lipsum
-	\end{mdframed}
-
+\textcolor{red}{\lipsum}
 
 \bibliography{refs}
 \end{document}
@@ -578,8 +558,8 @@
 %\begin{figure}[htb]
 %	\caption{Sinal de ECG}
 %	\centering
-%	\includegraphics[width=16cm]{matlab1.pdf}
+%	\includegraphics[width=10.8cm]{matlab1.pdf}
 %	\legend{Fonte: Do autor}
 %	\label{fig:matlab1}
-%\end{figure}
+%	\end{figure}
 
