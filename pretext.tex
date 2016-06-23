@@ -1,0 +1,182 @@
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+\pretextual
+% ---
+% Capa
+% ---
+\imprimircapa
+% ---
+
+% ---
+% Folha de rosto
+% (o * indica que haverá a ficha bibliográfica)
+% ---
+\imprimirfolhaderosto*
+% ---
+
+%\clearpage
+\imprimirfichacatalografica
+
+% ---
+% Inserir folha de aprovação
+% ---
+
+% Isto é um exemplo de Folha de aprovação, elemento obrigatório da NBR
+% 14724/2011 (seção 4.2.1.3). Você pode utilizar este modelo até a aprovação
+% do trabalho. Após isso, substitua todo o conteúdo deste arquivo por uma
+% imagem da página assinada pela banca com o comando abaixo:
+%
+% \includepdf{folhadeaprovacao_final.pdf}
+%
+\begin{folhadeaprovacao}
+
+  \begin{center}
+    {\imprimirautor}
+    \vspace*{\fill}\vspace*{\fill}
+    \begin{center}
+      \ABNTEXchapterfont\bfseries\Large\imprimirtitulo
+    \end{center}
+    \vspace*{\fill}
+	    
+    %\hspace{.45\textwidth}
+    
+    	\begin{center}
+    		\vspace*{0.5cm}
+    		Esta Monografia foi julgada no contexto da disciplina EEL7890 -- Trabalho de Conclusão de Curso (TCC), e aprovado em sua forma final pelo Programa de Engenharia Elétrica da Universidade Federal de Santa Catarina.
+    		\vspace*{0.5cm}
+	 		\end{center}
+	    
+    \vspace*{\fill}
+   \end{center}
+  
+  \begin{center}
+    %\vspace*{0.5cm}
+    {\large\imprimirlocal},
+    {\large\imprimirdata}
+    %\vspace*{1cm}
+	\end{center}
+	        
+   \assinatura{\textbf{ Prof. Dr. Eng. Renato Lucas Pacheco} \\ Coordenador de Graduação}
+   Banca Examinadora:
+   \assinatura{\textbf{Prof. Dr. Eng. \imprimirorientador} \\ Orientador} 
+   \assinatura{\textbf{Professor} \\ Convidado 1}
+   \assinatura{\textbf{Professor} \\ Convidado 2}
+   %\assinatura{\textbf{Professor} \\ Convidado 3}
+   %\assinatura{\textbf{Professor} \\ Convidado 4}
+	      
+
+\end{folhadeaprovacao}
+% ---
+
+% ---
+% Dedicatória
+% ---
+\begin{dedicatoria}
+	\vspace*{\fill}
+	\centering
+	\noindent
+	\textit{Este trabalho é dedicado à minha família pela compreensão e apoio nos momentos difíceis da jornada da graduação} \vspace*{\fill}
+\end{dedicatoria}
+% ---
+
+% ---
+% Agradecimentos
+% ---
+\begin{agradecimentos}
+\textcolor{red}{Obrigado}
+\end{agradecimentos}
+% ---
+
+% ---
+% Epígrafe
+% ---
+\begin{epigrafe}
+	\vspace*{\fill}
+	\noindent
+	\hangindent=5cm \\
+ 	\textit{`` O homem disse que tinha de ir embora -- antes queria me ensinar uma coisa muito importante: -- Você quer conhecer o segredo de ser um menino feliz para o resto da sua vida? \\ -- Quero -- Respondi. \\ O segredo se resume em três palavras, que ele pronunciou com intensidade, mãos nos meus ombros e olhos nos meus olhos: \\ -- Pense nos outros.''}
+ 	\begin{flushright}
+	Fernando Sabino	
+	\end{flushright}		
+\end{epigrafe}
+% ---
+
+% ---
+% RESUMOS
+% ---
+
+%% resumo em português
+%\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+%\begin{resumo}
+%Aqui vai o resumo
+%
+%\textbf{Palavras-chaves}: latex. abntex. editoração de texto.
+%\end{resumo}
+%
+%% resumo em inglês
+%\begin{resumo}[Abstract]
+% \begin{otherlanguage*}{english}
+%   This is the english abstract.
+%   \vspace{\onelineskip}
+%
+%   \noindent 
+%   \textbf{Key-words}: latex. abntex. text editoration.
+% \end{otherlanguage*}
+%\end{resumo}
+%
+%% resumo em espanhol
+%\begin{resumo}[Resumen]
+% \begin{otherlanguage*}{spanish}
+%   Acá vá el resumen en español.
+%   \vspace{\onelineskip}
+%
+%   \noindent 
+%   \textbf{Palabras clave}: latex. abntex. text editoration.
+% \end{otherlanguage*}
+%\end{resumo}
+
+% ---
+% inserir lista de ilustrações
+% ---
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de tabelas
+% ---
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de abreviaturas e siglas
+% ---
+\begin{siglas}
+  \item[Celesc] Centrais Elétricas de Santa Catarina
+  \item[SE] Subestação
+  \item[CBU] Camboriú
+  \item[CMB] Camboriú Morro do Boi
+\end{siglas}
+% ---
+
+% ---
+% inserir lista de símbolos
+% ---
+\begin{simbolos}
+  \item[$ \Omega $] Letra grega Ômega
+  \item[$ \Delta $] Letra grega Delta
+\end{simbolos}
+
+% ---
+% inserir o sumario
+% ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+% ---
+%fim dos elementros Pré Textuais
+
