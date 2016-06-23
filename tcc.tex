@@ -191,7 +191,7 @@
 	   \vspace*{\fill}
 	   \centering
 	   \noindent
-	   \textit{Este trabalho é dedicado à minha família que foram tão compreensíveis e me deram tanto apoio nos momentos difíceis da jornada da graduação} \vspace*{\fill}
+	   \textit{Este trabalho é dedicado à minha família pela compreensão e apoio nos momentos difíceis da jornada da graduação} \vspace*{\fill}
 	\end{dedicatoria}
 	% ---
 
@@ -309,7 +309,7 @@
 		O projeto visa estudar a implantação e execução do projeto já realizado pela Divisão de Planejamento e Normas, enumeração e função de componentes da subestação e principalmente estudar a solução que foi lançada com o objetivo de ampliar de 30MVA para 75MVA até final de 2015 e possibilidade de ampliação futura para até 100MVA utilizando o mesmo pátio de manobra, ou seja, utilizando o mesmo terreno que encontra sem espaço físico para abrigar mais equipamentos que não sejam compactos.
 
 	\section{Metodologia}
-	\lipsum[1]
+	\textcolor{red}{\lipsum[1-2]}
 
 	% ---------------------------------------------------
 	% Capítulo 1
@@ -447,32 +447,24 @@
 					Para a alta tensão é usado porcelana-óleo e a hexafluoreto de enxofre ($SF_6$).\par
 
 		\subsection{Características Elétricas}
-			A simbologia padrão dos transformadores de corrente mostra os terminais primários de alta tensão H1 e H2 e os terminais secundários X1 e X2, como visto na \autoref{fig:tc1}.
-
+			O circuito equivalente padrão dos transformadores de corrente mostra os terminais primários de alta tensão P1 e P2 e os terminais secundários S1 e S2, como visto na \autoref{fig:tc2}.\par
 			\begin{figure}[htb]
 				\caption{Simbologia e circuito equivalente simplificado do TC}
 				\centering
 				\subfloat [Simbologia]{
-				\includegraphics[width=3cm]{tca.pdf}
+				\includegraphics[width=5cm]{tca.pdf}
 				\label{fig:tc1}
 				}
 				\subfloat [Circuito equivalente]{
-				\includegraphics[width=5.8cm]{tcb.jpg}
+				\includegraphics[width=5.8cm]{tcb.pdf}
 				\label{fig:tc2}
 				}
-				% \legend{Fonte: Do autor}
-			\end{figure}
+				\legend{Fonte: Do autor}
+				\end{figure}
 			
-			O ponto, para transformadores com polaridade aditiva, indica onde entra a corrente no primário e onde sai a corrente no secundário (defasagem de 180º). Modelos industriais de TC’s têm os terminais de alta tensão marcados como P1 e P2 (Primário 1 e Primário 2), sendo que em muitos casos pode haver diferentes ligações do circuito primário que permitam alterar a relação de transformação. Os terminais secundários são marcados como 1s1, 1s2, 2s2 (número, algarismo, número), indicando respectivamente o número do enrolamento, o símbolo de terminal secundário (s) e o número da derivação do terminal secundário.\par
-			\begin{figure}[htb]
-			  \caption{Placa de identificação de um TC utilizado no barramento de 138 kV}
-			  \centering
-			  \includegraphics[width=10.8cm]{placatc.jpg}
-			% \legend{Fonte: Do autor}
-			  \label{fig:placatc}
-			\end{figure}
-
-			O circuito equivalente aproximado para um transformador de corrente é mostrado na Figura 10, onde a transformação da corrente entre os circuitos primário e secundário é feita sem perdas. A impedância de dispersão do primário Z1 é multiplicada pelo quadrado da relação $N^{2}$ quando referida ao secundário. A impedância de dispersão secundária é Z2. Os componentes de perdas no núcleo por correntes parasitas e por magnetização são dados por Zm e a impedância de carga é dada por Zc. Este circuito generalizado pode ser simplificado como mostrado no esquema ao lado. A impedância primária Z1 pode ser desprezada, uma vez que o reduzido número de espiras no primário (o que é verdadeiro para a maioria dos TC’s comerciais) tem pequena resistência e pouca dispersão. A corrente através do ramo magnetizante Xm é Im, chamada corrente de excitação. A corrente de excitação é atrasada de 90º em relação a V1'.\par
+			O ponto para transformadores com polaridade aditiva, mostrado na \autoref{fig:tc1} indica onde entra a corrente no primário e onde sai a corrente no secundário (defasagem de 180º). Modelos industriais de TC’s têm os terminais de alta tensão marcados como P1 e P2 (Primário 1 e Primário 2), sendo que em muitos casos pode haver diferentes ligações do circuito primário com diferente relação de transformação. Os terminais secundários são marcados como 1S1, 1S2, 1S3, indicando respectivamente o número do enrolamento, o símbolo de terminal secundário (s) e o número da derivação do terminal secundário. Na \autoref{fig:tc1} é mostrado a simbologia de três TC's nas fases A, B e C da baixa tensão de um transformador.\par
+			O circuito equivalente, de modo geral, para um transformador de corrente pode ser modelado como no esquema da \autoref{fig:tc2}. Onde as resistências e as reatâncias com índice 1 são relativas ao primário, as com índice 2 são relativas ao secundário e o núcleo de ferro do acoplamento magnético representado com o índice m onde o $R_m$ representa as perdas ôhmicas através das correntes de histerese e de Foulcault e $X_m$ responsável pela corrente reativa devida à circulação das linhas de fluxo do circuitos magnético. \cite{mamedemanual}\par
+			Pela \autoref{fig:tc2} pode-se entender que a uma corrente $I_p$ absorvida da rede provoca uma queda de tensão no primário, ensiguida é transmitida ao secundário que alimenta a bobina secundária e a bobina do galvanômetro (ou medidor digital) representado pela impedância $Z_c=R_c+iX_c$. As perdas do núcleo por meio da corrente $I_\phi$ determinam o erro de medição, com isto é possível calcular a corrente do secundário por $I_s=I_p-I_\phi$.\par
 			\begin{figure}[htb]
 			  \caption{Foto de um Transformador de Corrente}
 			  \centering
@@ -483,7 +475,7 @@
 
 		\subsection{Classificação}
 			\subsubsection{TCs para serviço de medição}
-				São os transforadores cuja função é medir, requer reproduzir fielmente a magnitude e o ângulo de fase da corrente, sua precisão deve ser garantida desde uma pequena fração de de corrente nominal da ordem de 10\% até o excesso de corrente da ordem de 20\%, sobre o valor nominal.\cite{apuntesmeza}\par
+				São os transforadores cuja função é medir, requer reproduzir fielmente a magnitude e o ângulo de fase da corrente, sua precisão deve ser garantida desde uma pequena fração de corrente nominal da ordem de 10\% até o excesso de corrente da ordem de 20\%, sobre o valor nominal.\cite{apuntesmeza}\par
 			\subsubsubsection{Fator de sobrecorrente}
 				Além de representar uma elevada segurança aos operadores e leituristas, os TCs têm a finalidade de proteger os instrumentos de medida contra sobrecargas ou sobrecorrentes de valores muito elevados. Isto é possível, porque o seu núcleo é especificado para entrar em saturação para correntes superiores à corrente nominal vezes o fator de sobrecorrente, conforme se pode mostrar na \autoref{eq:fsobrecorrente}.
 				\begin{equation} \label{eq:fsobrecorrente}
