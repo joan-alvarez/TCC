@@ -114,17 +114,18 @@
 % ----------------------------------------------------------
 % ELEMENTOS PRÉ-TEXTUAIS
 % ----------------------------------------------------------
-\include{pretext}
+%\include{pretext}
+
+%% retirar o %(comentário) para incluir o sumário a seguir e compilar o modo impressão
+
+\imprimircapa
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
 
 % ----------------------------------------------------------
 % ELEMENTOS TEXTUAIS
 % ----------------------------------------------------------
-
-%% retirar o %(comentário) para incluir o sumário a seguir e compilar o modo impressão
-
-%\pdfbookmark[0]{\contentsname}{toc}
-%\tableofcontents*
-%\cleardoublepage
 
 \include{text}
 
