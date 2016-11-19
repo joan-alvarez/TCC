@@ -76,7 +76,7 @@
 						\label{fig:tca}
 					\end{figure}
 				\paragraph*{b)\indent TC tipo enrolado}
-					É aquele cujo enrolamento é constituído de uma ou mais espiras envolvendo o núcleo do transformador, confomre ilustrado na \autoref{fig:tcb}.
+					É aquele cujo enrolamento é constituído de uma ou mais espiras envolvendo o núcleo do transformador, conforme ilustrado na \autoref{fig:tcb}.
 					\begin{figure}[htb]
 						\caption{TC tipo enrolado}
 						\centering
@@ -94,7 +94,7 @@
 						\label{fig:tcc}
 					\end{figure}
 				\paragraph*{d)\indent TC tipo bucha}
-					É aquele cuja características são semelhantes às do tc do tipo barra, porém sua instalação é feita na bucha dos equipamentos, que funcionan como enrolamento primário, de acordo com a \autoref{fig:tcd}.
+					É aquele cuja características são semelhantes às do tc do tipo barra, porém sua instalação é feita na bucha dos equipamentos, que funcionam como enrolamento primário, de acordo com a \autoref{fig:tcd}.
 					\begin{figure}[htb]
 						\caption{TC tipo bucha}
 						\centering
@@ -121,7 +121,7 @@
 						\label{fig:tcf}
 					\end{figure}
 				\paragraph*{g)\indent TC tipo vários núcleos secundários}
-					É aquele constituído de dois o mais núcleos ssecundários montados isoladamente formando com o enrolamento primário, um só conjunto, conforme se mostra na \autoref{fig:tcg}.
+					É aquele constituído de dois o mais núcleos secundários montados isoladamente formando com o enrolamento primário, um só conjunto, conforme se mostra na \autoref{fig:tcg}.
 					\begin{figure}[htb]
 						\caption{TC tipo vários núcleos secundários}
 						\centering
@@ -175,7 +175,7 @@
 			
 			O ponto para transformadores com polaridade aditiva, mostrado na \autoref{fig:tc1} indica onde entra a corrente no primário e onde sai a corrente no secundário (defasagem de 180º). Modelos industriais de TC’s têm os terminais de alta tensão marcados como P1 e P2 (Primário 1 e Primário 2), sendo que em muitos casos pode haver diferentes ligações do circuito primário com diferente relação de transformação. Os terminais secundários são marcados como 1S1, 1S2, 1S3, indicando respectivamente o número do enrolamento, o símbolo de terminal secundário (s) e o número da derivação do terminal secundário. Na \autoref{fig:tc1} é mostrado a simbologia de três TC's nas fases A, B e C da baixa tensão de um transformador.\par
 			O circuito equivalente, de modo geral, para um transformador de corrente pode ser modelado como no esquema da \autoref{fig:tc2}. Onde as resistências e as reatâncias com índice 1 são relativas ao primário, as com índice 2 são relativas ao secundário e o núcleo de ferro do acoplamento magnético representado com o índice m onde o $R_m$ representa as perdas ôhmicas através das correntes de histerese e de Foulcault e $X_m$ responsável pela corrente reativa devida à circulação das linhas de fluxo do circuitos magnético. \cite{mamedemanual}\par
-			Pela \autoref{fig:tc2} pode-se entender que a uma corrente $I_p$ absorvida da rede provoca uma queda de tensão no primário, ensiguida é transmitida ao secundário que alimenta a bobina secundária e a bobina do galvanômetro (ou medidor digital) representado pela impedância $Z_c=R_c+iX_c$. As perdas do núcleo por meio da corrente $I_\phi$ determinam o erro de medição, com isto é possível calcular a corrente do secundário por $I_s=I_p-I_\phi$.\par
+			Pela \autoref{fig:tc2} pode-se entender que a uma corrente $I_p$ absorvida da rede provoca uma queda de tensão no primário, em seguida é transmitida ao secundário que alimenta a bobina secundária e a bobina do galvanômetro (ou medidor digital) representado pela impedância $Z_c=R_c+iX_c$. As perdas do núcleo por meio da corrente $I_\phi$ determinam o erro de medição, com isto é possível calcular a corrente do secundário por $I_s=I_p-I_\phi$.\par
 			\begin{figure}[htb]
 				\caption{Foto de um Transformador de Corrente}
 				\centering
@@ -236,8 +236,167 @@
 % ---------------------------------------------------
 
 \chapter{Projeto de subestações de alta tensão}
-\label{chap:projSEAT}
-\textcolor{red}{\lipsum}
+	\label{chap:projSEAT}
+	A \citeonline{IEC60038:2002} define os circuitos de alta tensão como sendo aqueles com tensões acima de 1000V em corrente alternada. No presente capítulo serão abordados os diferentes tipos de configuração de barra de subestações de distribuição, ou seja, entre 13,8kV e 138kV. Far-se-á primeiramente algumas definições. 
+
+	\section{Introdução}
+		Segundo \citeonline{book:equipAT} o módulo de manobra consiste no conjunto de equipamentos, materiais e serviços necessários à implantação dos setores de manobra. Todavia outra denominação usualmente usada como vãos, ou na sua denominação em inglês \textit{bay}, em seu cerne, estas denominações caracterizam o espaço físico para realização de funções (manobras) que permitem a composição da subestação em módulos. Ao longo do capítulo, ficará claro que a subestação pode ser montada como uma espécie de LEGO, cujos diversos tipos de \textit{bays} podem se encaixar conforme necessidade e espaço físico disponível. Os principais vãos (ou módulos de manobra, ou \textit{bays}) em subestações podem ser definidas como:\par
+
+		\begin{itemize}
+			\item Entrada de Linha (EL)
+			\item Interligação de Barramentos (IB)
+			\item Conexão de Auto/Transformador (CT)
+			\item Alimentador (AL)
+			\end{itemize}
+		\subsection{Entrada de Linha (EL)}
+			A entrada de linha consiste na fonte de energia que alimenta a subestação. Os padrões provém segundo a \citeonline{nt304}.\footnote{A NT409 informa sobre a metodologia de composição dos módulos construtivos do sistema brasileiro de distribuição de energia elétrica, referente às redes, linhas e subestações de distribuição, com tensão inferior a 230 kv. metodologia de composição dos módulos construtivos do sistema brasileiro de distribuição de energia elétrica, referente às redes, linhas e subestações de distribuição, com tensão inferior a 230 kv}\par
+			A \autoref{fig:ELcorte} mostra o arranjo padrão para entradas de linha em 138kV, verifica-se a utilização do para-raio (PR) como primeiro equipamento para proteção dos equipamentos subsequentes contra descargas atmosféricas, equipamentos de proteção como os transformadores de potencial (TP) e corrente (TC), derivação para as chaves seccionadoras que se dirigem para o disjuntor (DJ) principal (seccionadoras normalmente fechadas) e para o disjuntor TIE (seccionadoras normalmente abertos, caso os disjuntor principal não esteja em manutenção), e a presença dos dois barramentos para execução da manobra de manutenção dos disjuntores.\par
+			\begin{figure}[!b]
+				\caption{Corte Lateral de uma Entrada de Linha}
+				\centering
+				\includegraphics[width=150mm,angle=90]{ELcorte.pdf}
+				\legend{Fonte: Cedido por Celesc S.A. - Subestação Concórdia São Cristóvão - 138/34/13,8kV}
+				\label{fig:ELcorte}
+				\end{figure}
+		\subsection{Conexão de Auto/Transformador (CT)}
+			A conexão de transformador liga o barramento ao transformador. A \autoref{fig:UNCT} mostra no lado de alta a conexão em barra principal e de transferência com proteção do disjuntor ligado na barra principal, derivação com uma chave para a barra de transferência. No lado de baixa, a conexão é feita em barra simples comum nestes níveis de tensão, onde se utiliza apenas um \textit{baypass} com uma chave seccionadora.\par
+			Já a \autoref{fig:CTcorte} mostra um exemplo de conexão de transformador quando a alta é ligado aos dois barramentos.\par
+			\begin{figure}[!b]
+				\caption{Diagrama unifilar de uma conexão de transformador}
+				\centering
+				\includegraphics[width=108mm]{UNCT.pdf}
+				\legend{Fonte: Do autor}
+				\label{fig:UNCT}
+				\end{figure}
+			\begin{figure}[!b]
+				\caption{Corte de uma conexão de transformador em 138kV}
+				\centering
+				\includegraphics[width=108mm]{CTcorte.pdf}
+				\legend{Fonte: Cedido por Celesc S.A. - Subestação Concórdia São Cristóvão - 138/34/13,8kV}
+				\label{fig:CTcorte}
+				\end{figure}
+		\subsection{Alimentador (AL)}
+			Os alimentadores são os vãos de ramificação geralmente de saída ligados no setor de baixa do qual a energia elétrica diverge para abastecimento de uma carga. Neste \textit{bays} é utilizado o religador (RL) como dispositivo de proteção como mostrado na \autoref{fig:UNAL}.\par
+			\begin{figure}[!b]
+				\caption{Diagrama unifilar de um alimentador}
+				\centering
+				\includegraphics[width=108mm]{UNAL.pdf}
+				\legend{Fonte: Do autor}
+				\label{fig:UNAL}
+				\end{figure}
+		\subsection{Interligação de Barramentos (IB)}
+			\label{sec:IB}
+			Quando se faz necessário a substituição ou manutenção de um disjuntor de uma entrada de linha ou o religador de um alimentador, entra em ação como substituto o disjuntor ou religador de transferência comumente chamado de TIE que inglês tem o significado de "amarrar" ou "vincular" as duas barras para transferir a função de proteção ou controle.\par
+			Outra função pode ser chamada de interligação de barramento quando se deseja seccionar uma barra (feita sempre no barramento principal), que pode ser tanto por uma seccionadora, ou quando se prioriza a confiabilidade, através de um disjuntor. Embora o seccionamento não elimine por completo o risco de perda total da subestação devido à ocorrência de falhas, a sua probabilidade é substancialmente reduzida, pois somente uma falha no disjuntor de seccionamento é que provocará este evento severo. A flexibilidade para a manutenção das secções de barras tem uma sensível melhora, mantendo-se a subestação parcialmente em operação.\par
+			A \autoref{fig:UNIB} mostra um setor de baixa de uma subestação onde o barramento principal se encontra seccionado por um disjuntor, isto é feito nos casos onde o setor ultrapassa o número de quatro alimentadores, o vão com número IEQ 25 também mostra o TIE composto por um religador, quando necessário a manutenção ou substituição dos religadores do alimentador.\par
+			\begin{figure}[!htb]
+				\caption{Diagrama Unifilar de um setor de baixa tensão de uma subestação}
+				\centering
+				\includegraphics[width=10.8cm]{IB.pdf}
+				\legend{Fonte: Do autor}
+				\label{fig:UNIB}
+				\end{figure}			
+	\section{Configurações de barra}
+		Segundo \citeonline{guiaprojetoSE} a configuração de barra utilizada deverá levar em consideração fatores de confiabilidade, custo simplicidade construtiva flexibilidade operativa facilidade de manutenção e facilidade de expansão. Já \citeonline{book:equipAT} considera que se a configuração de barra estiver abaixo das necessidades do sistema pode fragilizá-la, agora se estiver acima haverá investimentos ociosos. Contudo, a decisão se dará principalmente pela posição de dois principais equipamentos, o disjuntor representado como DJ, e as chaves seccionadoras CD mostradas nos esquemas a seguir.
+		\subsection{Barra Simples (BS)}
+			A \autoref{fig:BS} apresenta a configuração em barra simples, trata-se das mais básicas configurações de barra utilizada em subestações de pequeno porte em média e alta tensão, aplicadas em subestações de distribuição ou subestações industriais.\par
+			Já para \citeonline{materialhaffner} são citadas os \textit{tradeoff} a seguir:\par
+			As vantagens são de menor custo em uma menor área, instalação e manobras simples (ligar e desligar circuitos alimentadores e entradas de linha).\par
+			As desvantagens são que podem ser usadas quando as cargas podem ser interrompidas e de as falha, ampliação, ou manutenção no barramento implica em desligamento da linha, e consequente sobrecarga da subestação, caso seja uma entrada de linha ou interrupção do fornecimento dos consumidores caso seja um alimentador.\par
+			Como mostrado na entrada de linha 1 da \autoref{fig:BS}, pode-se adicionar uma chave seccionadora CDC para melhoria do arranjo com função de \textit{bypass}, ou seja, passagem direta da energia, entretanto corre risco de caso esta chave CDC estar acionada expor a subestação a falhas.\par 
+			\begin{figure}[!htb]
+				\caption{Configuração Barra Simples}
+				\centering
+				\includegraphics[width=10.8cm]{01BS.pdf}
+				\legend{Fonte: Do autor}
+				\label{fig:BS}
+				\end{figure}
+		\subsection{Barra Principal e Transferência (BP+T)} \label{sec:BPT}
+			A \autoref{fig:BPT} apresenta a adição de uma barra de transferência ou também chamada de barra auxiliar, que permite a substituição ou manutenção de qualquer disjuntor sem o desligamento de qualquer linha. Nesta configuração é necessário todavia a adição do TIE, com função de interligação das barras e substituição da proteção para a linha em manutenção como citado na \autoref{sec:IB}.\par
+			As vantagens são de baixo custo, qualquer disjuntor pode ser retirado de serviço para manutenção e os equipamentos podem ser conectados e desconectados à barra principal sem muitas dificuldades.\par
+			As desvantagens são o custo de um disjuntor extra para conexão com outra barra, manobras relativamente complicadas para colocar um disjuntor em manutenção, falhas num barramento ou num disjuntor resulta no desligamento da subestação e a barra de transferência opera cerca de toda sua vida útil desenergizada.\par
+			\begin{figure}[!htb]
+				\caption{Configuração Barra Principal e Transferência}
+				\centering
+				\includegraphics[width=10.8cm]{02BPT.pdf}
+				\legend{Fonte: Do autor}
+				\label{fig:BPT}
+				\end{figure}
+%		\subsection{Barra Principal Seccionada e Transferência (BPS+T)}
+		\subsection{Barra Dupla com Disjuntor Simples a Três, Quatro e Cinco Chaves (BD-Ds-3 ch)}
+			A \autoref{fig:BDs} apresenta três tipos de entrada de linha, a três, quatro e cinco chaves conectados a duas barras que ao contrário da \autoref{sec:BPT}, apresenta estas duas barras energizadas. O direcionamento é feito por meio das chaves seccionadoras das entradas de linha para separação de zona de proteção.\par
+			Na entrada de linha (EL-1) com três chaves a inexistência de chaves de \textit{bypass}, a manutenção ou reparos em disjuntores retira de operação o circuito do sistema. Em sistemas em malha (malhado) ou redundantes, este fato torna-se irrelevante. Ainda, não ocorre a perda de configuração normal, minimizando os riscos do sistema. Na maior parte dos casos que se utiliza o \textit{bypass}, a configuração perdida e o sistema fragilizado.\par
+			Na entrada de linha (EL-2) com quatro chaves é adicionado uma chave \textit{bypass} de forma que o disjuntor da entrada de linha possa ser liberado para manutenção e reparos sem que seja necessário desligar o circuito da linha. Neste caso se aproveita a operação da barra dupla e uma das barras, escolhida previamente, utiliza-se como barra de transferência, e dedicada a um \textit{bay}. Neste caso é possível liberar apenas um disjuntor de cada vez, ou seja, a proteção é para apenas uma linha.\par
+			Segundo \citeonline{book:equipAT} a sequência de manobras para quatro chaves é: remanejar os circuitos para a barra exclusiva de operação (B1), exceto o do \textit{bay} a ser transferido que deve ser conectado à barra B2; fechar a chave de \textit{bypass} do referido \textit{bay}, abrir o disjuntor a ser liberado e abrir as suas chaves de isolamento.\par
+			Ainda sobre a configuração a quatro chaves, esta sendo a mais utilizada no brasil para rede básica, otimiza os investimentos, pois apenas duas chaves operam normalmente abertas.\par
+			Na entrada de linha (EL-3) com cinco chaves, segundo \cite{book:equipAT} é utilizado em subestações de $138kV$ e $230kV$. Apesar de possuir um grau de flexibilidade com aumento de uma chave com relação à configuração anterior, adicionar uma chave significa aumentar o número de intertravamentos e possibilidade de falhas, já que não há como definir a barra de transferência previamente e por apresentar maior de equipamentos e área energizados.\par
+			Geralmente é utilizado apenas um tipo de configuração das três apresentadas a seguir, porém há casos específicos onde podem ser utilizados soluções mistas quando trata-se de subestações envolvendo geradores que passam desligados parte do tempo que reduzem a necessidade de chaves \textit{bypass}, neste caso utiliza-se a configuração a três chaves e os alimentadores a quatro chaves.\par
+			\begin{figure}[!htb]
+				\caption{Configuração Barra Dupla com Disjuntor Simples a Três, Quatro e Cinco Chaves}
+				\centering
+				\includegraphics[width=10.8cm]{03BDs.pdf}
+				\legend{Fonte: Do autor}
+				\label{fig:BDs}
+				\end{figure}
+%		\subsection{Barra Dupla com Disjuntor Simples a Quatro Chaves (BD-Ds-4 ch)}
+%		\subsection{Barra Dupla com Disjuntor Simples a Cinco Chaves (BD-Ds-5 ch)}
+%		\subsection{Barra Dupla com Disjuntor Simples a Três e Quatro (Chaves BD-Ds-3 e 4 ch)}
+%		\subsection{Barra Dupla e Transferência com Disjuntor Simples a Três e Quatro Chaves (BD+T)}
+%		\subsection{Barra Dupla Seccionadas com Disjuntor Simples a Quatro Chaves (BDS-Ds-4 ch)}
+		\subsection{Anel Simples (AN)}
+			A \autoref{fig:AN} apresenta a configuração em anel simples, onde observa-se a conexão de quatro ramos por meio de um laço elétrico formado por disjuntores, esta configuração permite saída de operação de um disjuntor sem interromper o fornecimento de energia dos outros ramos. Possui a vantagem de ser econômica e simples, porém, expõe a sistema a ocorrências externas.\par
+			Segundo \citeonline{guiaprojetoSE} a configuração possui a desvantagem de os disjuntores serem dimensionados para o dobro da corrente de curto-circuito dos circuitos de alimentação.\par
+			\begin{figure}[!htb]
+				\caption{Configuração Anel Simples}
+				\centering
+				\includegraphics[width=10.8cm]{08AN.pdf}
+				\legend{Fonte: Do autor}
+				\label{fig:AN}
+				\end{figure}
+		\subsection{Anel Múltiplo (ANM)}
+			A \autoref{fig:ANM} apresenta a configuração em anel múltiplo para subestações onde é necessário maior segurança e disponibilidade, presentes em subestações de 230kV, 345kV e 500kV.\par
+			Ela possui a vantagem de ser mais econômica por apresentar oito conexões com apenas nove disjuntores, o laço elétrico adicionado conduz à estabilidade que minimiza a perda de configuração de configuração da subestação.\par
+			As desvantagens está em dificuldade de projetos de sua expansão, possibilidade de ser necessário o cruzamento de circuitos que atrapalham na visualização de equipamentos durante ações de manutenções no pátio.\par
+			Outro fato está da configuração não ser simétrica, pois há dois nós que são protegidos por três disjuntores enquanto que os demais por dois disjuntores. Segundo \citeonline{book:equipAT} neste caso não é recomendável conectar linhas de transmissão, geradores ou equipamentos de compensação de reativos que requeiram manobras frequentes, pois em uma ocorrência haverá separação dos circuitos e formação de ilhas elétricas com consequências severas para o sistema elétrico.\par
+			\begin{figure}[!htb]
+				\caption{Configuração Anel Múltiplo}
+				\centering
+				\includegraphics[width=10.8cm]{09ANM.pdf}
+				\legend{Fonte: Do autor}
+				\label{fig:ANM}
+				\end{figure}
+		\subsection{Barra Dupla com Disjuntor e Meio (BD-D1/2)}
+			A \autoref{fig:BD-D1/2} mostra a configuração com disjuntor e meio que utiliza três disjuntores para conectar dois terminais, cada terminal é protegido por um disjuntor exclusivo mais um compartilhado entre os dois, deste modo, vem o nome de um disjuntor e meio. É utilizado quando a segurança é um fator essencial.\par
+			Esta configuração se torna estável pois há menores perdas de configuração devido às ocorrências de falhas com a existência do segundo laço elétrico.\par
+			Segundo \citeonline{book:equipAT} esta configuração, usual nas subestações acima de 345 kV do sistema elétrico brasileiro, possui boa flexibilidade operativa, facilidades para a sua expansão e fácil visualização dos equipamentos no pátio de manobras devido ao arranjo físico adotado: equipamentos instalados entre as barras. No entanto, comparativamente com outras configurações de barra, esta configuração é de custo relativamente elevado. Para a conexão de seis circuitos, são necessários nove disjuntores (um e meio por \textit{bay}), nove conjuntos de TC’s e 24 chaves seccionadoras. Portanto, é necessário realizar um balanço entre a real necessidade para o sistema elétrico e os investimentos para a sua implantação e evolução.\par
+			\begin{figure}[!htb]
+				\caption{Configuração Barra Dupla com Disjuntor e Meio}
+				\centering
+				\includegraphics[width=10.8cm]{10BD-D1e2.pdf}
+				\legend{Fonte: Do autor}
+				\label{fig:BD-D1/2}
+				\end{figure}
+		\subsection{Barra Dupla com Disjuntor e Meio Modificado (BD-D1/2-M)}
+			Com intuito de reduzir custos e resguardar uma ampliação que aumente a segurança no futuro neste exemplo é apresentado a mesma configuração de disjuntor e meio, mas com terminais conectados nas barras, com isso a configuração passa a ser um anel simples com seis terminais apresentado na \autoref{fig:BD-D1/2M}.\par
+			Segundo \citeonline{book:equipAT} devem ser tomados dois cuidados: (i) o sistema de proteção deve permitir a rápida identificação da falha, separando falha na barra de falha nos autotransformadores conectados diretamente às barras, (ii) não devem ser conectados diretamente às barras linhas de transmissão elementos de compensação de reativos (bancos de capacitores ou de reatores), ou unidades geradoras.\par
+			\begin{figure}[!htb]
+				\caption{Configuração Barra Dupla com Disjuntor e Meio Modificado}
+				\centering
+				\includegraphics[width=10.8cm]{11BD-D1-2M.pdf}
+				\legend{Fonte: Do autor}
+				\label{fig:BD-D1/2M}
+				\end{figure}
+%		\subsection{Barra Dupla com Disjuntor e Um Terço (BD-D1/3)}
+		\subsection{Barra Dupla com Disjuntor Duplo (BD-Dd)}
+			Para subestações muito específicas, com reduzido número de \textit{bays} e alta capacidade de potência por \textit{bay}, como por exemplo, em conexões de usinas nucleares, a configuração em barra dupla com disjuntor duplo pode ser uma solução apropriada. A \autoref{fig:BD-DD} ilustra a situação. É importante observar que nesta configuração não há disjuntor de interligação de barras. Embora esta configuração seja de alto desempenho, uma eventual perda das duas barras (baixa probabilidade) provoca a perda total de conectividade na subestação, ficando, sob este aspecto, em desvantagem em relação às configurações em barra dupla com disjuntor e meio e barra dupla com disjuntor e um terço. Um pátio com esta configuração de barra é de custo elevado e só deve ser aplicado quando um estudo quantitativo criterioso embasar a decisão.\par
+			\begin{figure}[!htb]
+				\caption{Configuração Barra Dupla com Disjuntor Duplo}
+				\centering
+				\includegraphics[width=10.8cm]{13BD-DD.pdf}
+				\legend{Fonte: Do autor}
+				\label{fig:BD-DD}
+				\end{figure}
+
 % ---------------------------------------------------
 % Capítulo 3
 % ---------------------------------------------------
@@ -265,3 +424,5 @@
 % ---------------------------------------------------
 \chapter*[Conclusão]{Conclusão}
 \textcolor{red}{\lipsum}
+
+\bibliography{refs}
