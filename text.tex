@@ -30,7 +30,7 @@
 % Capítulo 1
 % ---------------------------------------------------
 
-\chapter{Equipamentos de Subestações}
+\chapter{Equipamentos de subestações}
 	\label{chap:equipSE}
 	Inicialmente para melhor elucidar o trabalho proposto faz-se necessário uma descrição inicial do que é uma subestação e a enumeração dos seus principais equipamentos que a compõe. Somente no \autoref{chap:projSEAT} se fará uma descrição da maneira como esses equipamentos podem ser arranjados para melhor confiabilidade do sistema.
 	\section*{Subestação}
@@ -230,9 +230,42 @@
 
 	\section{Relés}
 
+% ---------------------------------------------------
+% Capítulo 2 (linguiça, quem sabe o principal)
+% ---------------------------------------------------
+
+\chapter{Especificação de equipamentos}
+	\label{chap:espEqui}
+	O estudo básico necessários para a especificação das características elétricas dos equipamentos, que consistem basicamente dos estudos de fluxo de potência para a determinação das correntes nominais, dos estudos de curto-circuito para a determinação da suportabilidade a correntes de curto-circuito dos equipamentos e da capacidade de interrupção dos disjuntores e dos estudos de sobretensões para a determinação dos níveis de isolamento. Existe ainda uma série de outros estudos específicos que dependem do tipo de aplicação de cada equipamento (abertura de seccionadores em subestações de $SF_6$, chaveamento de banco de capacitores em derivação etc.).\par
+	A especificação destas características deverá se basear em quatro fatores principais: experiência, estudos, normas e padronização. Neste ponto, os estudos realizados na etapa de detalhamento se fundamentarão principalmente no diagrama unifilar, consistindo basicamente no estudo do fluxo de potência para a determinação das correntes nominais, no estudo de curto-circuito para a determinação da suportabilidade ao curto-circuito e da interruptibilidade dos disjuntores e no estudo das sobretensões para a determinação dos níveis de isolamento.\par
+	Este capítulo irá mostrar alguns equipamentos e sua devida especificação a partir de tabelas de seus manuais e os procedimentos descritos em \citeonline{book:EquiElet}, \citeonline{book:TransitElet} e \citeonline{book:equipAT}.\par
+
+	\section{Corrente de Curto-Circuito}
+		Em geral as características destes equipamentos são semelhantes às dos equipamentos de alta tensão, porém devidamente dimensionadas para médias tensões. No caso das correntes de curto-circuito, entretanto, o método de cálculo utilizado se difere.\par
+		Neste método relaciona-se a tensão nominal do circuito, a potência aparente trifásica e a impedância percentual do transformador de força com a corrente de curto-circuito da seguinte forma:\par
+			\begin{equation} \label{eq:correntenominal}
+			I_n = \frac{S}{\sqrt{3}\cdot U_n}
+			\end{equation}
+			\begin{equation} \label{eq:correntenominal}
+			I_{cc} = \frac{S}{\sqrt{3}{\cdot}U_n{\cdot}Z} = \frac{I_n}{Z}
+			\end{equation}
+		Onde:\par
+
+		\begin{itemize}		
+		\item $I_n$ -- Corrente Nominal;
+		\item $S$ -- Potência aparente do transformado;
+		\item $U_n$ -- Tensão nominal;
+		\item $I_{CC}$ -- Corrente de curto circuito;
+		\item $Z$ -- Impedância percentual do transformador;
+		\end{itemize}
+
+
+
+
+
 
 % ---------------------------------------------------
-% Capítulo 2
+% Capítulo 3
 % ---------------------------------------------------
 
 \chapter{Projeto de subestações de alta tensão}
